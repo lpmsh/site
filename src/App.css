@@ -1,4 +1,11 @@
 .main{
-    width: 100vh;
+    background-color: black;
     height: 100vh;
+    width: 100%;
+    background-size: cover;
+}
+
+.construction{
+    position: relative;
+    right: 80px;
 }
