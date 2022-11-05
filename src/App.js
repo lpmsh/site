@@ -1,23 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import Thing from './threejs/threeScene';
+import { Canvas } from '@react-three/fiber';
+
+
+
 
 function App() {
+  var width = window.innerWidth
+  var height = window.innerHeight
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='main' style={{ position: "absolute", width: 1406, height: 1500}}>
+      <Canvas camera={{ position: [0, 0, 10]}}>
+        <Thing/>
+      </Canvas>
+      {/* <h1>{width} {height}</h1> */}
+
+ 
     </div>
   );
 }
