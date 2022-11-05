@@ -1,25 +1,27 @@
-import { useThree } from '@react-three/fiber';
+import { useThree, useFrame } from '@react-three/fiber';
 import { Text3D, Center } from "@react-three/drei";
-import React, { useState } from 'react';
-import { TypeAnimation } from 'react-type-animation';
+import React, { useState, useRef } from 'react';
 
 
 function Scene({ margin = 0.5 }) {
-  var textX = -4;
-  const { width, height } = useThree((state) => state.viewport);
-  
+  var textSize = 3;
+  const [hover, setHover] = useState(false);
+  const lpmText = useRef();
+
   return (
     <>
-      <Center rotation={[-0.5, 0.2, .3]}>
+      <Center position={[0, 2, 0]} className='3d'  rotation={[-0.4, 0.2, .2]}>
         <Text3D
+          ref={lpmText}
+     
           curveSegments={32}
           bevelEnabled
           bevelSize={0.04}
           bevelThickness={0.1}
           height={0.5}
-          lineHeight={0.5}
+          lineHeight={textSize}
           letterSpacing={-0.06}
-          size={1.5}
+          size={textSize}
           font="/Inter_Bold.json">
           {`LPM`}
           <meshNormalMaterial />
