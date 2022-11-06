@@ -1,5 +1,5 @@
 import './App.css';
-import LPM3D from './components/threeScene';
+import LPM3D from './components/LPMText';
 import { Canvas } from '@react-three/fiber';
 import { Html, OrbitControls, PresentationControls, useHelper } from '@react-three/drei';
 import React, {useState, useRef } from 'react';
