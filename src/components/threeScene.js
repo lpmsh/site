@@ -5,39 +5,44 @@ import { getSpaceUntilMaxLength } from '@testing-library/user-event/dist/utils';
 import { gsap } from 'gsap';
 
 
-function Scene({ margin = 0.5 }) {
+export default function LPM3D({ margin = 0.5 }) {
   const [hover, setHover] = useState(false);
   
   const lpmText = useRef(null);
+
   useFrame((state) => {
     if (!!lpmText.current){
-      if (hover){
-        
-
-        gsap.to(lpmText.current.scale, {
-          y: 1.2,
-          duration: 2,
-          ease: 3
-        })
-        
-      }else if (hover == false){
-        gsap.to(lpmText.current.scale, {
-          y: 1,
-          duration: 2,
-          ease: 3
-        }) 
+      //console.log(lpmText.current); //THIS IS HOW YOU GET ALL OF THE DATA OF A REF (SO YOU CAN FIGURE OUT KEYS TO ASSIGN VALUES TO)
       
+      if (hover){
+        gsap.to(lpmText.current.scale, {
+          x: 2,
+          y: 2,
+          z: 2,
+          duration: 5
+        })
+
       }
+      else if (hover == false){
+        gsap.to(lpmText.current.scale, {
+          z: 3,
+          duration: 5,
+          ease: "power1.out"
+        }); 
+      }
+      
+      
     }
-  })
+  });
 
   return (
     <>
-      <Center position={[0, 0, 0]} className='canvasScene'  rotation={[-0.4, 0.2, .2]}>
+      <Center className='canvasScene'  >
         <Text3D
           ref={lpmText}
-          onPointerEnter={() => setHover(true)}
-          onPointerLeave={() => setHover(false)}
+          rotation={[-0.4, 0.2, .2]}
+          onPointerEnter={(e) => setHover(true)}
+          onPointerLeave={(e) => setHover(false)}
           curveSegments={32}
           bevelEnabled
           bevelSize={0.04}
@@ -46,6 +51,8 @@ function Scene({ margin = 0.5 }) {
           lineHeight={0}
           letterSpacing={-0.06}
           size={2.5}
+          scale={[2, 2, 3]}
+     
           font="/Inter_Bold.json">
           {`LPM`}
           <meshNormalMaterial />
@@ -55,7 +62,7 @@ function Scene({ margin = 0.5 }) {
   )
 }
 
-export default Scene;
+
 /*
     <PresentationControls global snap={false} zoom={1} rotation={[0, -Math.PI / 2, 0]} polar={[0, Math.PI / 4]} azimuth={[-Math.PI / 4, Math.PI / 4]}>
         <RoundedBox args={[5, 5, 5]} radius={0.05} smoothness={4} >
