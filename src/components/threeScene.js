@@ -1,27 +1,51 @@
 import { useThree, useFrame } from '@react-three/fiber';
 import { Text3D, Center } from "@react-three/drei";
 import React, { useState, useRef } from 'react';
+import { getSpaceUntilMaxLength } from '@testing-library/user-event/dist/utils';
+import { gsap } from 'gsap';
 
 
 function Scene({ margin = 0.5 }) {
-  var textSize = 3;
   const [hover, setHover] = useState(false);
-  const lpmText = useRef();
+  
+  const lpmText = useRef(null);
+  useFrame((state) => {
+    if (!!lpmText.current){
+      if (hover){
+        
+
+        gsap.to(lpmText.current.scale, {
+          y: 1.2,
+          duration: 2,
+          ease: 3
+        })
+        
+      }else if (hover == false){
+        gsap.to(lpmText.current.scale, {
+          y: 1,
+          duration: 2,
+          ease: 3
+        }) 
+      
+      }
+    }
+  })
 
   return (
     <>
-      <Center position={[0, 2, 0]} className='3d'  rotation={[-0.4, 0.2, .2]}>
+      <Center position={[0, 0, 0]} className='canvasScene'  rotation={[-0.4, 0.2, .2]}>
         <Text3D
           ref={lpmText}
-     
+          onPointerEnter={() => setHover(true)}
+          onPointerLeave={() => setHover(false)}
           curveSegments={32}
           bevelEnabled
           bevelSize={0.04}
           bevelThickness={0.1}
           height={0.5}
-          lineHeight={textSize}
+          lineHeight={0}
           letterSpacing={-0.06}
-          size={textSize}
+          size={2.5}
           font="/Inter_Bold.json">
           {`LPM`}
           <meshNormalMaterial />
