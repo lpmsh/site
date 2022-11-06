@@ -10,30 +10,23 @@ export default function LPM3D({ margin = 0.5 }) {
   
   const lpmText = useRef(null);
 
-  useFrame((state) => {
-    if (!!lpmText.current){
-      //console.log(lpmText.current); //THIS IS HOW YOU GET ALL OF THE DATA OF A REF (SO YOU CAN FIGURE OUT KEYS TO ASSIGN VALUES TO)
-      
-      if (hover){
-        gsap.to(lpmText.current.scale, {
-          x: 2,
-          y: 2,
-          z: 2,
-          duration: 5
-        })
+  function hoverZoom(){
+    gsap.to(lpmText.current.scale, {
+      x: 2,
+      y: 2,
+      z: 2,
+      duration: 2
+    })
+  }
 
-      }
-      else if (hover == false){
-        gsap.to(lpmText.current.scale, {
-          z: 3,
-          duration: 5,
-          ease: "power1.out"
-        }); 
-      }
-      
-      
-    }
-  });
+  function hoverEnd(){
+    gsap.to(lpmText.current.scale, {
+      z: 3,
+      duration: 3,
+      ease: "power1.out"
+    }); 
+  }
+
 
   return (
     <>
@@ -41,8 +34,8 @@ export default function LPM3D({ margin = 0.5 }) {
         <Text3D
           ref={lpmText}
           rotation={[-0.4, 0.2, .2]}
-          onPointerEnter={(e) => setHover(true)}
-          onPointerLeave={(e) => setHover(false)}
+          onPointerEnter={(e) => hoverZoom()}
+          onPointerOut={(e) => hoverEnd()}
           curveSegments={32}
           bevelEnabled
           bevelSize={0.04}
