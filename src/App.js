@@ -5,6 +5,7 @@ import { Html, OrbitControls, PresentationControls, useHelper } from '@react-thr
 import React, {useState, useRef } from 'react';
 import UnderConstruction from './components/UnderConstruction'
 import { DirectionalLightHelper } from 'three';
+import Header from './components/Navbar';
 
 
 
@@ -14,8 +15,10 @@ function App() {
   const [isShown, setIsShown] = useState(false);
 
   return (
-    <div>
       <div className='main' style={{width: "100vw", height: "100vh"}}>
+            <html>
+              <Header/>
+            </html>
           <Canvas orthographic camera={{ position: [0, 0, 100], zoom: 100 }}>
             <PresentationControls global snap={true} zoom={1} rotation={[0, .2, 0]} polar={[0, Math.PI / 4]} azimuth={[-Math.PI / 4, Math.PI / 10]}>
             <ambientLight intensity={0.5} />
@@ -25,7 +28,9 @@ function App() {
             {/* <OrbitControls enableZoom={false} enablePan={false} minPolarAngle={Math.PI / 2} maxPolarAngle={Math.PI / 2} /> */}
             </PresentationControls>
           </Canvas>
-      </div>
+          
+      
+            
     </div>
   );
 }

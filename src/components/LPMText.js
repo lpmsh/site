@@ -22,7 +22,7 @@ export default function LPM3D({ margin = 0.5 }) {
   function hoverEnd(){
     gsap.to(lpmText.current.scale, {
       z: 3,
-      duration: 3,
+      duration: 2,
       ease: "power1.out"
     }); 
   }
