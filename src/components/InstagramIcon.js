@@ -1,4 +1,4 @@
-import instagram from './instagram.png'
+import instagram from './icons/instagram.png'
 
 function InstagramIcon() {
     return(

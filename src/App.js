@@ -40,7 +40,7 @@ function App() {
         
       </div>
       <div className='canvasDiv'>
-        <Canvas  className='canvas' style={{ position: 'relative', width: (windowWidth), height: (windowHeight) }} orthographic camera={{ position: [0, 0, 100], zoom: 100 }}>
+        <Canvas  className='canvas' orthographic camera={{ position: [0, 0, 100], zoom: 100 }}>
           <PresentationControls global snap={true} zoom={1} rotation={[0, .2, 0]} polar={[0, Math.PI / 4]} azimuth={[-Math.PI / 4, Math.PI / 10]}>
             <ambientLight intensity={0.5} />
             <directionalLight position={[10, 10, 10]} />

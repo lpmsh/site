@@ -1,4 +1,4 @@
-import github from './github.png'
+import github from './icons/github.png'
 
 function GithubIcon(){
     return(

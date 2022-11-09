@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import github from './github.png'
 import GithubIcon from './GithubIcon';
 import InstagramIcon from './InstagramIcon';
 
