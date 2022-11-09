@@ -1,11 +1,21 @@
 import { useThree, useFrame } from '@react-three/fiber';
-import { Text3D, Center } from "@react-three/drei";
+import { Text3D, Center, useAspect } from "@react-three/drei";
 import React, { useState, useRef } from 'react';
 import { getSpaceUntilMaxLength } from '@testing-library/user-event/dist/utils';
 import { gsap } from 'gsap';
 
 
 export default function LPM3D({ margin = 0.5 }) {
+  var width = window.innerWidth; //646.5
+  var height = window.innerHeight; //575.5
+  var SCALE_FACTOR = 871160
+  var scale = (width * height) / SCALE_FACTOR;
+
+  //scaling factor for 3d LPM
+  var scale = useAspect(
+    1, 1, 1
+  )
+
   const [hover, setHover] = useState(false);
   
   const lpmText = useRef(null);
@@ -14,14 +24,14 @@ export default function LPM3D({ margin = 0.5 }) {
     gsap.to(lpmText.current.scale, {
       x: 2,
       y: 2,
-      z: 2,
+      z: 3,
       duration: 2
     })
   }
 
   function hoverEnd(){
     gsap.to(lpmText.current.scale, {
-      z: 3,
+      z: 4,
       duration: 2,
       ease: "power1.out"
     }); 
@@ -40,15 +50,15 @@ export default function LPM3D({ margin = 0.5 }) {
           bevelEnabled
           bevelSize={0.04}
           bevelThickness={0.1}
-          height={0.5}
+          width={0.5}
           lineHeight={0}
           letterSpacing={-0.06}
-          size={2.5}
-          scale={[2, 2, 3]}
+          size={2.5} //nomral: 2.5
+          scale={[2, 2, 4]} //normal: [2, 2, 3]
      
           font="/Inter_Bold.json">
           {`LPM`}
-          <meshNormalMaterial />
+          <meshNormalMaterial/>
         </Text3D>
       </Center>
     </>

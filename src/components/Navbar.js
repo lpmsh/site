@@ -9,14 +9,13 @@ function Navbar() {
 
 
     return(
-        <div>
-            <a href='https://www.instagram.com/lpm_visuals' target="_blank">
-                <GithubIcon/>
-            </a>
-            <a href="https://www.github.com/slyguy5646" target="_blank">
+        <div className='iconbardiv'>
+            <a href="https://www.instagram.com/lpm_visuals" target="_blank" className='instagramlink'>
                 <InstagramIcon/>
             </a>
-
+            <a href='https://www.github.com/slyguy5646' target="_blank" className='githublink'>
+                <GithubIcon/>
+            </a>
         </div>
     );
 }

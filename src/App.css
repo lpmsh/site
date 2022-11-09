@@ -1,19 +1,64 @@
+.navbar{
+  color: white;
+}
 
+/* whole page styles */
 .main{
   background-color: black;
-  overflow: hidden; /* Hide scrollbars */
-}
-.navbar{
+  overflow: hidden; 
   text-align: center;
 }
 
-.githubicon{
-  margin-top: 20px;
-  width: 1%;
-  height: 1%;
+.canvasDiv{
+  text-align: center;
 }
 
-.instagramicon{
-  width: 1%;
-  height: 1%;
+
+
+/* styles for github button */
+.githubicon{
+  height: 30px;
+  padding-left: 5px;
+  opacity: 20%;
 }
+
+/* on hover opactiy animation */
+.githubicon:hover{
+  opacity: 100%;
+}
+
+/* styles for ig button */
+.instagramicon{
+  height: 30px;
+  padding-right: 5px;
+  opacity: 20%;
+}
+
+/* on hover opacity animation */
+.instagramicon:hover{
+  opacity: 100%;
+}
+
+
+
+/* puts two icons side by side */
+.instagramlink, .githublink{
+  display: inline-block;
+}
+
+
+/* styling for the whole bar */
+.iconbardiv{
+  border: 1px solid black;
+  margin: 1rem;
+  /* padding: 2rem 2rem; */
+  text-align: center;
+}
+
+
+
+
+
+
+
+
