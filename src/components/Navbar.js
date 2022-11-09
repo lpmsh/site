@@ -1,22 +1,24 @@
 import React, { useState } from 'react'
-import { Navbar } from 'react-navbar-menu'
+import github from './github.png'
+import GithubIcon from './GithubIcon';
+import InstagramIcon from './InstagramIcon';
 
-function Header() {
-    const [navbarOpen, setNavbarOpen] = useState(false);
-    const handleToggle = () => {
-        setNavbarOpen(prev => !prev)
-    }
+function Navbar() {
+
 
 
 
     return(
         <div>
-            <nav className="navBar">
-                <button onClick={handleToggle}>{navbarOpen ? "Close" : "Open"}</button>
-                <ul className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>...</ul>
-            </nav>
+            <a href='https://www.instagram.com/lpm_visuals' target="_blank">
+                <GithubIcon/>
+            </a>
+            <a href="https://www.github.com/slyguy5646" target="_blank">
+                <InstagramIcon/>
+            </a>
+
         </div>
     );
 }
 
-export default Header
+export default Navbar
