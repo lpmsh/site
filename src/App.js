@@ -37,7 +37,7 @@ function App() {
   }
 
   function redirect(){
-    window.location.href = "https://www.youtube.com"
+    window.location.href = "https://lpm.sh";
   }
 
   useEffect(() => {
