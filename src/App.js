@@ -36,10 +36,16 @@ function App() {
     console.log(windowWidth);
   }
 
+  function redirect(){
+    window.location.href = "https://www.youtube.com"
+  }
 
   useEffect(() => {
-    // window.location.reload(false);
-  }, [windowWidth]);
+    if (window.location.href == "https://portfolio-site-lpmonaghan06-yahoocom.vercel.app/"){
+      redirect();
+    }
+  });
+
 
 
 
