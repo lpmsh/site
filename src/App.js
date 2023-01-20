@@ -6,6 +6,7 @@ import React, {useState, useRef, useEffect } from 'react';
 import UnderConstruction from './components/UnderConstruction'
 import { DirectionalLightHelper } from 'three';
 import Navbar from './components/Navbar';
+import { TypeAnimation } from 'react-type-animation';
 
 
 
@@ -78,6 +79,24 @@ function App() {
             <LPM3D />
           </PresentationControls>
         </Canvas>
+        <div style={{textAlign: "center", color: "white", marginTop: "5%", marginBottom: "5%" }}>
+          <TypeAnimation
+            sequence={[
+              "Under Construction...", // Types 'One'
+              1000, // Waits 1s
+
+              () => {
+                console.log("Done typing!"); // Place optional callbacks anywhere in the array
+              },
+            ]}
+            wrapper="div"
+            cursor={true}
+            repeat={Infinity}
+            style={{ fontSize: "2em" }}
+            speed={15}
+            deletionSpeed={25}
+          />
+        </div>
       </div>
 
       {/********  show axis helpers and enable obrit controls ************/}
