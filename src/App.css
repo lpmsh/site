@@ -1,5 +1,6 @@
 .navbar{
   color: white;
+  margin-bottom: 0;
 }
 
 /* whole page styles */
@@ -10,7 +11,11 @@
 }
 
 .canvasDiv{
+  margin-top: 0;
   text-align: center;
+  height: 70vh;
+  width: 100vw;
+
 }
 
 
@@ -54,6 +59,8 @@
   /* padding: 2rem 2rem; */
   text-align: center;
 }
+
+
 
 
 

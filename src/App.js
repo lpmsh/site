@@ -22,29 +22,54 @@ function App() {
   function updateWidthAndHeight(){
     setWidth(window.innerWidth);
     setHeight(window.innerHeight);
-  };
+  }
+
+  // useEffect(() => {
+  //   window.addEventListener("resize", updateWidthAndHeight);
+  //   window.onresize
+  //   return () => window.removeEventListener("resize", updateWidthAndHeight);
+  // });
+
+  window.onresize = function(){
+    updateWidthAndHeight();
+    console.log(windowWidth);
+    console.log(windowWidth);
+  }
+
 
   useEffect(() => {
-    window.addEventListener("resize", updateWidthAndHeight);
-    return () => window.removeEventListener("resize", updateWidthAndHeight);
-  });
-
-  const canvas = useRef(null);
+    // window.location.reload(false);
+  }, [windowWidth]);
 
 
 
+
+  
   return (
-      <div className='main' style={{width: "100vw", height: "100vh"}}>
-      <div className='navbar'>
-          <Navbar/>
-        
+    <div className="main" style={{ width: "100vw", height: "100vh" }}>
+      <div className="navbar">
+        <Navbar />
       </div>
-      <div className='canvasDiv'>
-        <Canvas  className='canvas' orthographic camera={{ position: [0, 0, 100], zoom: 100 }}>
-          <PresentationControls global snap={true} zoom={1} rotation={[0, .2, 0]} polar={[0, Math.PI / 4]} azimuth={[-Math.PI / 4, Math.PI / 10]}>
+      <div className="canvasDiv">
+        <Canvas
+          className="canvas"
+          orthographic
+          camera={{
+            position: [0, 0, 100],
+            zoom: windowWidth / 21.33,
+          }}
+        >
+          <PresentationControls
+            global
+            snap={true}
+            zoom={1}
+            rotation={[0, 0.2, 0]}
+            polar={[0, Math.PI / 4]}
+            azimuth={[-Math.PI / 4, Math.PI / 10]}
+          >
             <ambientLight intensity={0.5} />
             <directionalLight position={[10, 10, 10]} />
-            <LPM3D/>
+            <LPM3D />
           </PresentationControls>
         </Canvas>
       </div>
@@ -53,10 +78,12 @@ function App() {
       {/* <axesHelper scale={2} position={[0, 0, 0]} onUpdate={(self) => self.setColors('#ff2080', '#20ff80', '#2080ff')} /> */}
       {/* <OrbitControls enableZoom={false} enablePan={false} minPolarAngle={Math.PI / 2} maxPolarAngle={Math.PI / 2} /> */}
       {/************************************************************ */}
-      
-            
     </div>
   );
+
+  const canvas = useRef(null);
+
+
 }
 
 export default App;

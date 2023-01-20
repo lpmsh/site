@@ -50,7 +50,7 @@ export default function LPM3D({ margin = 0.5 }) {
           bevelEnabled
           bevelSize={0.04}
           bevelThickness={0.1}
-          width={0.5}
+          width={1}
           lineHeight={0}
           letterSpacing={-0.06}
           size={2.5} //nomral: 2.5
