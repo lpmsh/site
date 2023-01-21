@@ -1,7 +1,7 @@
 import './App.css';
 import LPM3D from './components/LPMText';
 import { Canvas } from '@react-three/fiber';
-import { Html, OrbitControls, PresentationControls, useHelper } from '@react-three/drei';
+import { Html, OrbitControls, OrthographicCamera, PresentationControls, useHelper } from '@react-three/drei';
 import React, {useState, useRef, useEffect } from 'react';
 import UnderConstruction from './components/UnderConstruction'
 import { DirectionalLightHelper } from 'three';
@@ -10,32 +10,39 @@ import { TypeAnimation } from 'react-type-animation';
 
 
 
-
+//create your forceUpdate hook
+function useForceUpdate(){
+    const [value, setValue] = useState(0); // integer state
+    return () => setValue(value => value + 1); // update state to force render
+    // A function that increment 👆🏻 the previous state like here 
+    // is better than directly setting `setValue(value + 1)`
+}
 
 function App() {
+
+  const forceUpdate = useForceUpdate();
   var width = window.innerWidth;
   var height = window.innerHeight;
   var SCALE_FACTOR = 871160
   var scale = (width * height) / SCALE_FACTOR;
-  const [windowWidth, setWidth] = React.useState(window.innerWidth);
-  const [windowHeight, setHeight] = React.useState(window.innerHeight); 
+  // const [windowWidth, setWidth] = useState(window.innerWidth);
+  // const [windowHeight, setHeight] = useState(window.innerHeight); 
+  // const [lastWindowWidth, setLastWindowWidth] = useState(windowWidth); 
+  const [zoom, setZoom] = useState(window.innerWidth / 21.33);
 
-  function updateWidthAndHeight(){
-    setWidth(window.innerWidth);
-    setHeight(window.innerHeight);
-  }
+  // function updateWidthAndHeight(){
+  //   setLastWindowWidth(windowWidth);
+  //   setWidth(window.innerWidth);
+  //   setHeight(window.innerHeight);
+  //   setZoom(windowWidth / 21.33);
+  //   // console.log(windowWidth);
+  //   // console.log(windowWidth);
+  // }
 
-  // useEffect(() => {
-  //   window.addEventListener("resize", updateWidthAndHeight);
-  //   window.onresize
-  //   return () => window.removeEventListener("resize", updateWidthAndHeight);
-  // });
-
-  window.onresize = function(){
-    updateWidthAndHeight();
-    console.log(windowWidth);
-    console.log(windowWidth);
-  }
+  // window.onresize = function(){
+  //   updateWidthAndHeight();
+  //   forceUpdate();
+  // }
 
   function redirect(){
     window.location.href = "https://lpm.sh";
@@ -46,6 +53,15 @@ function App() {
       redirect();
     }
   });
+
+  // useEffect(() => {
+  //   if (lastWindowWidth != windowWidth){
+  //     setTimeout(5000);
+  //     if (lastWindowWidth != windowWidth){
+  //       window.location.reload();
+  //     }
+  //   }
+  // }, [window.innerWidth]);
 
 
 
@@ -63,7 +79,7 @@ function App() {
           orthographic
           camera={{
             position: [0, 0, 100],
-            zoom: windowWidth / 21.33,
+            zoom: window.innerWidth / 21.33,
           }}
         >
           <PresentationControls
@@ -79,14 +95,21 @@ function App() {
             <LPM3D />
           </PresentationControls>
         </Canvas>
-        <div style={{textAlign: "center", color: "white", marginTop: "5%", marginBottom: "5%" }}>
+        <div
+          style={{
+            textAlign: "center",
+            color: "white",
+            marginTop: "5%",
+            marginBottom: "5%",
+          }}
+        >
           <TypeAnimation
             sequence={[
               "Under Construction...", // Types 'One'
               1000, // Waits 1s
 
               () => {
-                console.log("Done typing!"); // Place optional callbacks anywhere in the array
+                // Place optional callbacks anywhere in the array
               },
             ]}
             wrapper="div"
