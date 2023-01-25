@@ -62,7 +62,7 @@ export default function LPM3D({ margin = 0.5 }) {
           width={3}
           lineHeight={0}
           letterSpacing={-0.06}
-          size={2.5} //nomral: 2.5
+          size={2} //nomral: 2.5
           scale={[Math.min(2, viewport.width / 9), Math.min(2, viewport.width / 9), 2]} //normal: [2, 2, 4]
           font="/Inter_Bold.json"
         >

@@ -40,7 +40,8 @@ const useStyles = createStyles((theme) => ({
   root: {
     position: "relative",
     zIndex: 1,
-    backgroundColor: 'black'
+    backgroundColor: 'black',
+
   },
 
   dropdown: {
