@@ -1,6 +1,6 @@
 import { useThree, useFrame } from '@react-three/fiber';
 import { Text3D, Center, useAspect } from "@react-three/drei";
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { getSpaceUntilMaxLength } from '@testing-library/user-event/dist/utils';
 import { gsap } from 'gsap';
 import { getDefaultZIndex } from '@mantine/core';
@@ -44,17 +44,28 @@ export default function LPM3D({ margin = 0.5 }) {
     }); 
   }
 
-  console.log(lpmText.current?.scale);
-
+  console.log(lpmText.current?.rotation);
+  const [zoomed, setZoomed] = useState(false);
+  useEffect(() => {
+    hoverStart();
+    setTimeout(() => {
+      hoverEnd();
+    }, 3500)
+  }, []);
 
   return (
     <>
       <Center className="canvasScene">
         <Text3D
           ref={lpmText}
-          rotation={[-0.4, 0.2, 0.2]}
-          onPointerEnter={(e) => hoverStart()}
-          onPointerOut={(e) => hoverEnd()}
+          rotation={[-0.4, 0.2, 0.2]} // -0.4, 0.2, 0.2
+          onPointerEnter={(e) => {
+            hoverStart();
+          }}
+          onPointerOut={(e) => {
+            hoverEnd();
+          }}
+          
           curveSegments={32}
           bevelEnabled
           bevelSize={0.04}
@@ -63,7 +74,11 @@ export default function LPM3D({ margin = 0.5 }) {
           lineHeight={0}
           letterSpacing={-0.06}
           size={2} //nomral: 2.5
-          scale={[Math.min(2, viewport.width / 9), Math.min(2, viewport.width / 9), 2]} //normal: [2, 2, 4]
+          scale={[
+            Math.min(2, viewport.width / 9),
+            Math.min(2, viewport.width / 9),
+            2,
+          ]} //normal: [2, 2, 4]
           font="/Inter_Bold.json"
         >
           {`LPM`}

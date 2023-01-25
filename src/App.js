@@ -7,7 +7,7 @@ import UnderConstruction from './components/UnderConstruction'
 import { DirectionalLightHelper } from 'three';
 import Navbar from './components/Navbar';
 import { TypeAnimation } from 'react-type-animation';
-
+import Embed from './components/embed';
 
 
 //create your forceUpdate hook
@@ -40,36 +40,37 @@ function App() {
   // }
 
   // window.onresize = function(){
-  //   updateWidthAndHeight();
-  //   forceUpdate();
-  // }
-
-  function redirect(){
-    window.location.href = "https://lpm.sh";
-  }
-
-  useEffect(() => {
-    if (window.location.href == "https://portfolio-site-lpmonaghan06-yahoocom.vercel.app/"){
-      redirect();
+    //   updateWidthAndHeight();
+    //   forceUpdate();
+    // }
+    
+    function redirect(){
+      window.location.href = "https://lpm.sh";
     }
-  });
-
-  // useEffect(() => {
-  //   if (lastWindowWidth != windowWidth){
-  //     setTimeout(5000);
-  //     if (lastWindowWidth != windowWidth){
-  //       window.location.reload();
-  //     }
-  //   }
-  // }, [window.innerWidth]);
-
-
-
-
-
-  
-  return (
-    <div className="main" style={{ width: "100vw", height: "100vh" }}>
+    
+    useEffect(() => {
+      if (window.location.href == "https://portfolio-site-lpmonaghan06-yahoocom.vercel.app/"){
+        redirect();
+      }
+    });
+    
+    // useEffect(() => {
+      //   if (lastWindowWidth != windowWidth){
+        //     setTimeout(5000);
+        //     if (lastWindowWidth != windowWidth){
+          //       window.location.reload();
+          //     }
+          //   }
+          // }, [window.innerWidth]);
+          
+          
+          
+          
+          
+          
+          return (
+            <div className="main" style={{ width: "100vw", height: "100vh" }}>
+      
       <div className="navbar">
         <Navbar />
       </div>
@@ -106,8 +107,9 @@ function App() {
           <TypeAnimation
             sequence={[
               "Under Construction...", // Types 'One'
-              1000, // Waits 1s
-
+              4000, // Waits 1s
+              "", 
+              10,
               () => {
                 // Place optional callbacks anywhere in the array
               },
@@ -118,14 +120,15 @@ function App() {
             style={{ fontSize: "2em" }}
             speed={15}
             deletionSpeed={25}
+            className='constructionText'
           />
         </div>
       </div>
-
       {/********  show axis helpers and enable obrit controls ************/}
       {/* <axesHelper scale={2} position={[0, 0, 0]} onUpdate={(self) => self.setColors('#ff2080', '#20ff80', '#2080ff')} /> */}
       {/* <OrbitControls enableZoom={false} enablePan={false} minPolarAngle={Math.PI / 2} maxPolarAngle={Math.PI / 2} /> */}
       {/************************************************************ */}
+
     </div>
   );
 
