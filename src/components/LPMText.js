@@ -3,6 +3,8 @@ import { Text3D, Center, useAspect } from "@react-three/drei";
 import React, { useState, useRef } from 'react';
 import { getSpaceUntilMaxLength } from '@testing-library/user-event/dist/utils';
 import { gsap } from 'gsap';
+import { getDefaultZIndex } from '@mantine/core';
+import { MeshDistanceMaterial } from 'three';
 
 
 export default function LPM3D({ margin = 0.5 }) {
@@ -21,11 +23,11 @@ export default function LPM3D({ margin = 0.5 }) {
   
   const lpmText = useRef(null);
 
-  function hoverZoom(){
+  function hoverStart(){
     gsap.to(lpmText.current.scale, {
       x: lpmText.current.scale?.x,
       y: lpmText.current.scale?.y,
-      z: lpmText.current.scale?.z + 2,
+      z: 4,
       duration: 3,
     });
   }
@@ -34,8 +36,10 @@ export default function LPM3D({ margin = 0.5 }) {
 
   function hoverEnd(){
     gsap.to(lpmText.current.scale, {
-      z: lpmText.current.scale?.z - 1,
-      duration: 2,
+      x: lpmText.current.scale?.x,
+      y: lpmText.current.scale?.y,
+      z: 2,
+      duration: 3,
       ease: "power1.out",
     }); 
   }
@@ -49,7 +53,7 @@ export default function LPM3D({ margin = 0.5 }) {
         <Text3D
           ref={lpmText}
           rotation={[-0.4, 0.2, 0.2]}
-          onPointerEnter={(e) => hoverZoom()}
+          onPointerEnter={(e) => hoverStart()}
           onPointerOut={(e) => hoverEnd()}
           curveSegments={32}
           bevelEnabled
@@ -59,11 +63,11 @@ export default function LPM3D({ margin = 0.5 }) {
           lineHeight={0}
           letterSpacing={-0.06}
           size={2.5} //nomral: 2.5
-          scale={[viewport.width / 9, viewport.width / 9, Math.min(4, (viewport.width /9))]} //normal: [2, 2, 4]
+          scale={[Math.min(2, viewport.width / 9), Math.min(2, viewport.width / 9), 2]} //normal: [2, 2, 4]
           font="/Inter_Bold.json"
         >
           {`LPM`}
-          <meshNormalMaterial />
+          <meshBasicMaterial wireframe={true} />
         </Text3D>
       </Center>
     </>

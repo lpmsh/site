@@ -33,7 +33,7 @@ import {
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { MantineLogo } from "@mantine/ds";
-
+import logoWhite from './icons/logoWhite.svg';
 const HEADER_HEIGHT = 60;
 
 const useStyles = createStyles((theme) => ({
@@ -155,9 +155,9 @@ export default function Navbar() {
   ));
 
   return (
-    <Header height={HEADER_HEIGHT} withBorder={false} mb={120} className={classes.root}>
+    <Header height={HEADER_HEIGHT} withBorder={false} mb={0} mt={5} className={classes.root}>
       <Container className={classes.header}>
-        <MantineLogo size={28} />
+        <img src={logoWhite} width={50} className="navLogo" onClick={function(){window.location.replace('/')}}></img>
         <Group spacing={5} className={classes.links}>
           {items}
         </Group>
