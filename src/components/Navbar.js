@@ -21,7 +21,7 @@
 
 // export default Navbar
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   createStyles,
   Header,
@@ -54,6 +54,9 @@ const useStyles = createStyles((theme) => ({
     borderTopLeftRadius: 0,
     borderTopWidth: 0,
     overflow: "hidden",
+    backgroundColor: "black",
+    color: "white",
+    // width: "300px",
 
     [theme.fn.largerThan("sm")]: {
       display: "none",
@@ -75,6 +78,7 @@ const useStyles = createStyles((theme) => ({
   },
 
   burger: {
+
     [theme.fn.largerThan("sm")]: {
       display: "none",
     },
@@ -125,18 +129,35 @@ export default function Navbar() {
     //   "label": "Pricing"
     // },
     {
+      "link": "/",
+      "label": ".home"
+    },
+    {
+      "link": "/links",
+      "label": ".links"
+    },
+    {
       "link": "/dev",
       "label": ".dev"
     },
     {
       "link": "/photos",
       "label": ".photos"
-    }
+    },
   ]
 
   const [opened, { toggle, close }] = useDisclosure(false);
   const [active, setActive] = useState(links[0].link);
   const { classes, cx } = useStyles();
+
+  useEffect(() => {
+    links.forEach(link => {
+      if (link.link == window.location.pathname){
+        setActive(link.link);
+      }
+    })
+  }, []);
+
 
   const items = links.map((link) => (
     <a
@@ -149,6 +170,7 @@ export default function Navbar() {
         event.preventDefault();
         setActive(link.link);
         close();
+        window.location.pathname = link.link
       }}
     >
       {link.label}
@@ -156,7 +178,7 @@ export default function Navbar() {
   ));
 
   return (
-    <Header height={HEADER_HEIGHT} withBorder={false} mb={0} mt={5} className={classes.root}>
+    <Header height={HEADER_HEIGHT} withBorder={false} mb={0} mt={0} className={classes.root}>
       <Container className={classes.header}>
         <img src={logoWhite} width={50} className="navLogo" onClick={function(){window.location.replace('/')}}></img>
         <Group spacing={5} className={classes.links}>
@@ -168,6 +190,7 @@ export default function Navbar() {
           onClick={toggle}
           className={classes.burger}
           size="sm"
+          color="white"
         />
 
         <Transition transition="pop-top-right" duration={200} mounted={opened}>

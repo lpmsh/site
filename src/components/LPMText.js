@@ -1,11 +1,10 @@
-import { useThree, useFrame } from '@react-three/fiber';
+import { useThree, useFrame, useLoader } from '@react-three/fiber';
 import { Text3D, Center, useAspect } from "@react-three/drei";
 import React, { useState, useRef, useEffect } from 'react';
 import { getSpaceUntilMaxLength } from '@testing-library/user-event/dist/utils';
 import { gsap } from 'gsap';
 import { getDefaultZIndex } from '@mantine/core';
-import { MeshDistanceMaterial } from 'three';
-
+import { MeshDistanceMaterial, TextureLoader } from 'three';
 
 export default function LPM3D({ margin = 0.5 }) {
   const {viewport} = useThree();
@@ -43,15 +42,23 @@ export default function LPM3D({ margin = 0.5 }) {
       ease: "power1.out",
     }); 
   }
-
-  console.log(lpmText.current?.rotation);
+  console.log(`Current: (${lpmText.current?.scale.x}, ${lpmText.current?.scale.y})\nViewport: ${viewport.width / 10.5} ${viewport.width / 6}`);
   const [zoomed, setZoomed] = useState(false);
+  
   useEffect(() => {
     hoverStart();
     setTimeout(() => {
       hoverEnd();
-    }, 3500)
+    }, 3500);
+
+    setInterval(() => {
+      hoverStart();
+      setTimeout(() => {
+        hoverEnd();
+      }, 3500)
+    }, 7000);
   }, []);
+
 
   return (
     <>
@@ -59,12 +66,12 @@ export default function LPM3D({ margin = 0.5 }) {
         <Text3D
           ref={lpmText}
           rotation={[-0.4, 0.2, 0.2]} // -0.4, 0.2, 0.2
-          onPointerEnter={(e) => {
-            hoverStart();
-          }}
-          onPointerOut={(e) => {
-            hoverEnd();
-          }}
+          // onPointerEnter={(e) => {
+          //   hoverStart();
+          // }}
+          // onPointerOut={(e) => {
+          //   hoverEnd();
+          // }}
           
           curveSegments={32}
           bevelEnabled
@@ -73,16 +80,21 @@ export default function LPM3D({ margin = 0.5 }) {
           width={3}
           lineHeight={0}
           letterSpacing={-0.06}
-          size={2} //nomral: 2.5
+          size={viewport.width / 10.5} //nomral: 2.5
           scale={[
-            Math.min(2, viewport.width / 9),
-            Math.min(2, viewport.width / 9),
+            Math.min(2),
+            Math.min(2),
             2,
           ]} //normal: [2, 2, 4]
           font="/Inter_Bold.json"
         >
           {`LPM`}
-          <meshBasicMaterial wireframe={true} />
+ 
+          <meshBasicMaterial 
+            transparent={true}
+            wireframe={true}
+            opacity={0.5}
+          />
         </Text3D>
       </Center>
     </>
