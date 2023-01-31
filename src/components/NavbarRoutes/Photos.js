@@ -43,6 +43,8 @@ function Photos() {
                 onChange={function (e) {
                     setPage(e);
                 }}
+
+                style={{'margin': 'auto'}}
             />
         </div>
     );
