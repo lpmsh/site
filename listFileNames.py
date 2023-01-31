@@ -20,7 +20,7 @@ imageArray = []
 
 for photo in dir_list:
     imageNum = f'image{dir_list.index(photo)}'
-    importStatement = f"import image{dir_list.index(photo)} from '../photos/{photo}'"
+    importStatement = f"import image{dir_list.index(photo)} from './photos/{photo}'"
     importStatements.append(importStatement)
     imageArray.append(imageNum)
 
