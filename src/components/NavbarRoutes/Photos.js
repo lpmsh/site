@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { IMAGES } from "../photoData";
 import { Pagination } from "@nextui-org/react";
-import { render } from "@testing-library/react";
+
 
 function Photos() {
     const [page, setPage] = useState(1);
@@ -11,12 +11,12 @@ function Photos() {
 
     function getPhotosToRender(index = 0) {
         let photosToRender = IMAGES[index].map((image, i) => (
-            <img
-                key={i}
-                src={image}
-                style={{ width: "100%", display: "block" }}
-                alt=""
-            />
+                <img
+                    key={i}
+                    src={image}
+                    style={{ width: "100%", display: "block" }}
+                    alt=""
+                />
         ));
 
         return photosToRender;
