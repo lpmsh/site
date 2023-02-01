@@ -92,7 +92,7 @@ import image90 from "./photos/nycday2cropped-6-min.jpg";
 import image91 from "./photos/nycday2cropped-51-min.jpg";
 import image92 from "./photos/nycday2cropped-41-min.jpg";
 export const IMAGES = [
-    [image0, image1, image2, image3, image4, image5],
+    [image84, image1, image92, image3, image4, image5],
     [image6, image7, image8, image9, image10, image11],
     [image12, image13, image14, image15, image16, image17],
     [image18, image19, image20, image21, image22, image23],
@@ -104,7 +104,25 @@ export const IMAGES = [
     [image54, image55, image56, image57, image58, image59],
     [image60, image61, image62, image63, image64, image65],
     [image66, image67, image68, image69, image70, image71],
-    [image72, image73, image74, image92, image76, image77],
+    [image72, image73, image74, image2, image76, image77],
     [image78, image79, image80, image81, image82, image83],
-    [image84, image85, image86, image87, image88, image89],
+    [image0, image85, image86, image87, image88, image89],
+];
+export const IMAGES_ALL = [
+
+    image84, image1, image92, image3, image4, image5,
+    image6, image7, image8, image9, image10, image11,
+    image12, image13, image14, image15, image16, image17,
+    image18, image19, image20, image21, image22, image23,
+    image24, image25, image26, image27, image28, image29,
+    image91, image31, image32, image33, image34, image35,
+    image36, image37, image38, image39, image40, image41,
+    image42, image43, image44, image45, image46, image47,
+    image48, image49, image50, image51, image52, image53,
+    image54, image55, image56, image57, image58, image59,
+    image60, image61, image62, image63, image64, image65,
+    image66, image67, image68, image69, image70, image71,
+    image72, image73, image74, image2, image76, image77,
+    image78, image79, image80, image81, image82, image83,
+    image0, image85, image86, image87, image88, image89,
 ];

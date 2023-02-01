@@ -5,7 +5,7 @@
 
 body {
     background-color: black;
-
+    overflow-x: hidden;
 }
 
 /* whole page styles */
@@ -20,6 +20,7 @@ body {
     text-align: center;
     height: 70vh;
     width: 100vw;
+    margin-bottom: -50px;
 }
 
 .canvas:hover {
@@ -68,36 +69,64 @@ body {
     cursor: pointer;
 }
 
+
+
+
+
+@keyframes constructionHover {
+  from {opacity: 20%;}
+  to {opacity: 50%;}
+}
+
+@keyframes reverseConstructionHover {
+  from {opacity: 50%;}
+  to {opacity: 20%;}
+}
+
 .constructionText {
     position: absolute;
     /* top: 50%; */
-    bottom: 5%;
+    bottom: 3%;
     left: 50%;
-
+    color: white;
     transform: translate(-50%, -50%);
+    opacity: 20%;
+    animation-name: reverseConstructionHover;
+    animation-duration: 0.4s;
+ 
+
 }
 
-.dev, .links, .photos{
-  margin-left: 19%;
-  margin-right: 19%;
-  margin-top: 20px;
-  color: white;
+.constructionText:hover{
+      animation-name: constructionHover;
+  animation-duration: 0.4s;
+
+  opacity: 50%;
+}
+
+
+.dev,
+.links,
+.photos {
+    margin-left: 19%;
+    margin-right: 19%;
+    margin-top: 20px;
+    color: white;
 }
 
 /* DEV PAGE*/
 
 .dev {
     text-align: left;
-  
 }
 
 /* LINKS PAGE */
 
-.links{
-  text-align: center;
+.links {
+    text-align: center;
 }
 
-.linkCard{
+.linkCard {
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
@@ -105,3 +134,12 @@ body {
     margin-bottom: 10px;
 }
 
+
+.paginationBarParent{
+    text-align: center;
+    position:relative;
+    /* bottom: 0; */
+    margin-top: 5%;
+    /* margin-bottom: 0; */
+    /* transform: translate(-%, 50%); */
+}

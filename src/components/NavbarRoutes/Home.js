@@ -51,6 +51,7 @@ function Home() {
     }
 
     useEffect(() => {
+        document.body.style.overflow = "hidden";
         if (
             window.location.href ==
             "https://portfolio-site-lpmonaghan06-yahoocom.vercel.app/"
@@ -69,6 +70,8 @@ function Home() {
     // }, [window.innerWidth]);
 
     return (
+        // <body className="bodyHome">
+
         <div className="main" style={{ width: "100vw", height: "100vh" }}>
             <div className="canvasDiv">
                 <Canvas
@@ -92,25 +95,17 @@ function Home() {
                         <LPM3D />
                     </PresentationControls>
                 </Canvas>
-                <div
-                    style={{
-                        textAlign: "center",
-                        color: "white",
-                        marginTop: "5%",
-                        marginBottom: "5%",
-                    }}
-                >
+                <h4>
                     <TypeAnimation
                         sequence={[
                             "Under Construction...", // Types 'One'
                             4000, // Waits 1s
-                            "",
-                            10,
+                        
                             () => {
                                 // Place optional callbacks anywhere in the array
                             },
                         ]}
-                        wrapper="div"
+                        // wrapper="h1"
                         cursor={true}
                         repeat={Infinity}
                         style={{ fontSize: "2em" }}
@@ -118,12 +113,12 @@ function Home() {
                         deletionSpeed={25}
                         className="constructionText"
                     />
-                </div>
+                </h4>
+                {/********  show axis helpers and enable obrit controls ************/}
+                {/* <axesHelper scale={2} position={[0, 0, 0]} onUpdate={(self) => self.setColors('#ff2080', '#20ff80', '#2080ff')} /> */}
+                {/* <OrbitControls enableZoom={false} enablePan={false} minPolarAngle={Math.PI / 2} maxPolarAngle={Math.PI / 2} /> */}
+                {/************************************************************ */}
             </div>
-            {/********  show axis helpers and enable obrit controls ************/}
-            {/* <axesHelper scale={2} position={[0, 0, 0]} onUpdate={(self) => self.setColors('#ff2080', '#20ff80', '#2080ff')} /> */}
-            {/* <OrbitControls enableZoom={false} enablePan={false} minPolarAngle={Math.PI / 2} maxPolarAngle={Math.PI / 2} /> */}
-            {/************************************************************ */}
         </div>
     );
 

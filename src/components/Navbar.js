@@ -34,7 +34,7 @@ import logoWhite from "./icons/logoWhite.svg";
 
 const useStyles = createStyles((theme) => ({
     root: {
-        position: "relative",
+        position: "sticky",
         zIndex: 1,
         backgroundColor: "black",
     },
@@ -173,7 +173,7 @@ export default function Navbar() {
             withBorder={false}
             mb={0}
             mt={0}
-       
+            
             className={classes.root}
         >
             <Container className={classes.header}>
