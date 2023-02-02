@@ -1,12 +1,18 @@
 # import OS module
 import os
 import json
+import platform
+from pathlib import Path
  
 
-# from pathlib import Path
-# print(Path.cwd())
-# Get the list of all files and directories
-path = "/Users/liammonaghan/JS/lpmsh/src/components/photos"
+print(Path.cwd())
+path = ''
+
+if platform.system() == 'Windows':
+    path = 'D:/lpmsh/src/components/photos'
+elif platform.system() == 'Darwin':
+    path = "/Users/liammonaghan/JS/lpmsh/src/components/photos"
+
 dir_list = os.listdir(path)
  
 # print("Files and directories in '", path, "' :")

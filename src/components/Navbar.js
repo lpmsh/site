@@ -29,7 +29,6 @@ import {
     Transition,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { MantineLogo } from "@mantine/ds";
 import logoWhite from "./icons/logoWhite.svg";
 
 const useStyles = createStyles((theme) => ({
