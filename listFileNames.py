@@ -25,10 +25,16 @@ imageArray = []
 
 
 for photo in dir_list:
-    imageNum = f'image{dir_list.index(photo)}'
-    importStatement = f"import image{dir_list.index(photo)} from './photos/{photo}'"
-    importStatements.append(importStatement)
-    imageArray.append(imageNum)
+    if dir_list.index(photo) + 1 > 18:
+        break
+    else:
+        highQualitySrc = f'image{dir_list.index(photo) + 1}'
+        lowQualitySrc = f'image{dir_list.index(photo) + 1}Scaled'
+        highQaulityImportStatement = f"import image{dir_list.index(photo) + 1} from './photos/{photo}'"
+        lowQualityImportStatement = f"import image{dir_list.index(photo) + 1}Scaled from './photos/{photo}'"
+        importStatements.append(highQaulityImportStatement)
+        importStatements.append(lowQualityImportStatement)
+        imageArray.append([lowQualitySrc, highQualitySrc, f"useProgressiveImg('{lowQualitySrc, highQualitySrc}')"])
 
 
 

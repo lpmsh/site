@@ -1,39 +1,129 @@
 [
-    "import image0 from './photos/image1.jpg'",
-    "import image1 from './photos/image10.jpg'",
-    "import image2 from './photos/image11.jpg'",
-    "import image3 from './photos/image12.jpg'",
-    "import image4 from './photos/image13.jpg'",
-    "import image5 from './photos/image14.jpg'",
-    "import image6 from './photos/image15.jpg'",
-    "import image7 from './photos/image16.jpg'",
-    "import image8 from './photos/image17.jpg'",
-    "import image9 from './photos/image18.jpg'",
-    "import image10 from './photos/image2.jpg'",
-    "import image11 from './photos/image3.jpg'",
-    "import image12 from './photos/image4.jpg'",
-    "import image13 from './photos/image5.jpg'",
-    "import image14 from './photos/image6.jpg'",
-    "import image15 from './photos/image7.jpg'",
-    "import image16 from './photos/image8.jpg'",
-    "import image17 from './photos/image9.jpg'"
+    "import image1 from './photos/image1-scaled.jpg'",
+    "import image1Scaled from './photos/image1-scaled.jpg'",
+    "import image2 from './photos/image1.jpg'",
+    "import image2Scaled from './photos/image1.jpg'",
+    "import image3 from './photos/image10-scaled.jpg'",
+    "import image3Scaled from './photos/image10-scaled.jpg'",
+    "import image4 from './photos/image10.jpg'",
+    "import image4Scaled from './photos/image10.jpg'",
+    "import image5 from './photos/image11-scaled.jpg'",
+    "import image5Scaled from './photos/image11-scaled.jpg'",
+    "import image6 from './photos/image11.jpg'",
+    "import image6Scaled from './photos/image11.jpg'",
+    "import image7 from './photos/image12-scaled.jpg'",
+    "import image7Scaled from './photos/image12-scaled.jpg'",
+    "import image8 from './photos/image12.jpg'",
+    "import image8Scaled from './photos/image12.jpg'",
+    "import image9 from './photos/image13-scaled.jpg'",
+    "import image9Scaled from './photos/image13-scaled.jpg'",
+    "import image10 from './photos/image13.jpg'",
+    "import image10Scaled from './photos/image13.jpg'",
+    "import image11 from './photos/image14-scaled.jpg'",
+    "import image11Scaled from './photos/image14-scaled.jpg'",
+    "import image12 from './photos/image14.jpg'",
+    "import image12Scaled from './photos/image14.jpg'",
+    "import image13 from './photos/image15-scaled.jpg'",
+    "import image13Scaled from './photos/image15-scaled.jpg'",
+    "import image14 from './photos/image15.jpg'",
+    "import image14Scaled from './photos/image15.jpg'",
+    "import image15 from './photos/image16-scaled.jpg'",
+    "import image15Scaled from './photos/image16-scaled.jpg'",
+    "import image16 from './photos/image16.jpg'",
+    "import image16Scaled from './photos/image16.jpg'",
+    "import image17 from './photos/image17-scaled.jpg'",
+    "import image17Scaled from './photos/image17-scaled.jpg'",
+    "import image18 from './photos/image17.jpg'",
+    "import image18Scaled from './photos/image17.jpg'"
 ][
-    "image0",
-    "image1",
-    "image2",
-    "image3",
-    "image4",
-    "image5",
-    "image6",
-    "image7",
-    "image8",
-    "image9",
-    "image10",
-    "image11",
-    "image12",
-    "image13",
-    "image14",
-    "image15",
-    "image16",
-    "image17"
+    [
+        "image1Scaled",
+        "image1",
+        "useProgressiveImg('('image1Scaled', 'image1')')"
+    ],
+    [
+        "image2Scaled",
+        "image2",
+        "useProgressiveImg('('image2Scaled', 'image2')')"
+    ],
+    [
+        "image3Scaled",
+        "image3",
+        "useProgressiveImg('('image3Scaled', 'image3')')"
+    ],
+    [
+        "image4Scaled",
+        "image4",
+        "useProgressiveImg('('image4Scaled', 'image4')')"
+    ],
+    [
+        "image5Scaled",
+        "image5",
+        "useProgressiveImg('('image5Scaled', 'image5')')"
+    ],
+    [
+        "image6Scaled",
+        "image6",
+        "useProgressiveImg('('image6Scaled', 'image6')')"
+    ],
+    [
+        "image7Scaled",
+        "image7",
+        "useProgressiveImg('('image7Scaled', 'image7')')"
+    ],
+    [
+        "image8Scaled",
+        "image8",
+        "useProgressiveImg('('image8Scaled', 'image8')')"
+    ],
+    [
+        "image9Scaled",
+        "image9",
+        "useProgressiveImg('('image9Scaled', 'image9')')"
+    ],
+    [
+        "image10Scaled",
+        "image10",
+        "useProgressiveImg('('image10Scaled', 'image10')')"
+    ],
+    [
+        "image11Scaled",
+        "image11",
+        "useProgressiveImg('('image11Scaled', 'image11')')"
+    ],
+    [
+        "image12Scaled",
+        "image12",
+        "useProgressiveImg('('image12Scaled', 'image12')')"
+    ],
+    [
+        "image13Scaled",
+        "image13",
+        "useProgressiveImg('('image13Scaled', 'image13')')"
+    ],
+    [
+        "image14Scaled",
+        "image14",
+        "useProgressiveImg('('image14Scaled', 'image14')')"
+    ],
+    [
+        "image15Scaled",
+        "image15",
+        "useProgressiveImg('('image15Scaled', 'image15')')"
+    ],
+    [
+        "image16Scaled",
+        "image16",
+        "useProgressiveImg('('image16Scaled', 'image16')')"
+    ],
+    [
+        "image17Scaled",
+        "image17",
+        "useProgressiveImg('('image17Scaled', 'image17')')"
+    ],
+    [
+        "image18Scaled",
+        "image18",
+        "useProgressiveImg('('image18Scaled', 'image18')')"
+    ]
 ]
