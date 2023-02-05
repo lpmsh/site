@@ -122,18 +122,18 @@ export default function Navbar() {
             link: "/",
             label: ".home",
         },
-        {
-            link: "/dev",
-            label: ".dev",
-        },
+        // {
+        //     link: "/dev",
+        //     label: ".dev",
+        // },
         {
             link: "/photos",
             label: ".photos",
         },
-        {
-            link: "/links",
-            label: ".links",
-        },
+        // {
+        //     link: "/links",
+        //     label: ".links",
+        // },
     ];
 
     const [opened, { toggle, close }] = useDisclosure(false);
@@ -146,6 +146,7 @@ export default function Navbar() {
                 setActive(link.link);
             }
         });
+
     }, []);
 
     const items = links.map((link) => (
@@ -172,7 +173,6 @@ export default function Navbar() {
             withBorder={false}
             mb={0}
             mt={0}
-            
             className={classes.root}
         >
             <Container className={classes.header}>

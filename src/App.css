@@ -13,6 +13,7 @@ body {
     background-color: black;
     overflow: hidden;
     text-align: center;
+    
 }
 
 .canvasDiv {
@@ -69,18 +70,22 @@ body {
     cursor: pointer;
 }
 
-
-
-
-
 @keyframes constructionHover {
-  from {opacity: 20%;}
-  to {opacity: 50%;}
+    from {
+        opacity: 20%;
+    }
+    to {
+        opacity: 50%;
+    }
 }
 
 @keyframes reverseConstructionHover {
-  from {opacity: 50%;}
-  to {opacity: 20%;}
+    from {
+        opacity: 50%;
+    }
+    to {
+        opacity: 20%;
+    }
 }
 
 .constructionText {
@@ -93,17 +98,14 @@ body {
     opacity: 20%;
     animation-name: reverseConstructionHover;
     animation-duration: 0.4s;
- 
-
 }
 
-.constructionText:hover{
-      animation-name: constructionHover;
-  animation-duration: 0.4s;
+.constructionText:hover {
+    animation-name: constructionHover;
+    animation-duration: 0.4s;
 
-  opacity: 50%;
+    opacity: 50%;
 }
-
 
 .dev,
 .links {
@@ -133,19 +135,38 @@ body {
     margin-bottom: 10px;
 }
 
-
-.paginationBarParent{
+.paginationBarParent {
     text-align: center;
-    position:relative;
+    position: relative;
     /* bottom: 0; */
     margin-top: 5%;
     /* margin-bottom: 0; */
 }
 
-
-
-
-.photos{
+.photos {
     text-align: center;
 }
+
+.errorParent {
+    text-align: center;
+    display: table-cell;
+    width: 100vw;
+    height: 100vh;
+    vertical-align: middle;
+}
+
+.errorMessage {
+    margin-top: -50px;
+    color: white;
+    font-weight: lighter;
+}
+
+.errorButton{
+    border: none;
+    border-radius: 10px;
+    width: 200px;
+    height: 50px;
+   
+}
+
 
