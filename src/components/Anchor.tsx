@@ -1,7 +1,26 @@
 import * as React from "react";
+import { cn } from "@/utils/cn";
 
-function A({ href, target, children }: { href: string; target?: string, children: React.ReactNode }) {
-  return <a className="text-custom-500 hover:text-custom-600" href={href} target={target}>{children}</a>;
+function A({
+  href,
+  target,
+  children,
+  className,
+}: {
+  href: string;
+  target?: string;
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <a
+      className={cn("text-custom-400 hover:text-custom-500", className)}
+      href={href}
+      target={target}
+    >
+      {children}
+    </a>
+  );
 }
 
 export default A;

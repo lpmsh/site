@@ -7,14 +7,35 @@ import {
 import A from "@/components/Anchor";
 import BlogCard from "@/components/BlogCard";
 import { allPosts } from "contentlayer/generated";
-import {  sortPostsNewestToOldest } from "@/utils/BlogUtils";
+import { sortPostsNewestToOldest } from "@/utils/BlogUtils";
+import Nav from "@/components/Nav";
 
 function Home() {
   return (
     <div className="flex justify-center items-center">
       <div className="h-[100dvh]  min-w-[400px] w-7/12 flex flex-col  items-start gap-y-8 p-8">
-        <div className=" flex w-full justify-between items-center gap-x-12 self-start">
+        {/* <div className=" flex w-full justify-between items-center gap-x-12 self-start">
           <div className="text-6xl font-black">LPM</div>
+          <div className="flex justify-between items-center gap-x-4 text-xl font-bold">
+            <a
+              className="text-slate-200 hover:text-slate-300 hover:cursor-pointer"
+              href="/blog"
+            >
+              Blog
+            </a>
+            <a
+              className="text-slate-200 hover:text-slate-300 hover:cursor-pointer"
+              href="/photos"
+            >
+              Photos
+            </a>
+            <a
+              className="text-slate-200 hover:text-slate-300 hover:cursor-pointer"
+              href="/projects"
+            >
+              Projects
+            </a>
+          </div>
           <div className="flex items-center gap-x-4">
             <a href="https://twitter.com/lmon_25" target="_blank">
               <IconBrandTwitter className="w-8 h-8 text-custom-200 hover:text-custom-300 " />
@@ -26,7 +47,8 @@ function Home() {
               <IconBrandGithub className="w-8 h-8 text-custom-200 hover:text-custom-300 " />
             </a>
           </div>
-        </div>
+        </div> */}
+        <Nav/>
         <div className="text-xl font-normal self-center justify-self-center">
           Hey!
           <span className="font-bold"> I'm Liam.</span> I'm a Christian,
@@ -38,7 +60,12 @@ function Home() {
         <div className="pt-8 text-2xl font-semibold">Recent Blog Posts</div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 w-full">
           {sortPostsNewestToOldest(allPosts).map((post) => (
-            <BlogCard title={post.title} date={post.date} icon={post.icon} slug={post.slug}/>
+            <BlogCard
+              title={post.title}
+              date={post.date}
+              icon={post.icon}
+              slug={post.slug}
+            />
           ))}
         </div>
       </div>
