@@ -7,6 +7,7 @@ import {
 import A from "@/components/Anchor";
 import BlogCard from "@/components/BlogCard";
 import { allPosts } from "contentlayer/generated";
+import {  sortPostsNewestToOldest } from "@/utils/BlogUtils";
 
 function Home() {
   return (
@@ -36,7 +37,7 @@ function Home() {
         </div>
         <div className="pt-8 text-2xl font-semibold">Recent Blog Posts</div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 w-full">
-          {allPosts.map((post) => (
+          {sortPostsNewestToOldest(allPosts).map((post) => (
             <BlogCard title={post.title} date={post.date} icon={post.icon} slug={post.slug}/>
           ))}
         </div>

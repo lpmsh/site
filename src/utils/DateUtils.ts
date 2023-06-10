@@ -20,5 +20,9 @@ export function getMonthName(monthNumber: number) {
 export function getHumanDateFromSlashDate(date: string | Date) {
   const goodDate = new Date(date);
 
-  return `${getMonthName(goodDate.getMonth())} ${goodDate.getDate()}, ${goodDate.getFullYear()}`;
+  return `${getMonthName(
+    goodDate.getMonth()
+  )} ${goodDate.getDate()}, ${goodDate.getFullYear()}`;
 }
+
+
