@@ -20,12 +20,24 @@ const Post = defineDocumentType(() => ({
       description: "The date of the post",
       required: true,
     },
+    categories: {
+      type: "json",
+      description: "The categories of the post",
+      required: true,
+    },
   },
+
   computedFields: {
     slug: {
       type: "string",
       resolve: (doc) => `${doc.title.toLowerCase().split(" ").join("-")}`,
     },
+    // categories: {
+    //   type: "json",
+    //   resolve: (doc) => {
+    //     return doc.categories.split(",");
+    //   },
+    // },
   },
 }));
 

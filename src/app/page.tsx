@@ -48,23 +48,25 @@ function Home() {
             </a>
           </div>
         </div> */}
-        <Nav/>
+        <Nav />
         <div className="text-xl font-normal self-center justify-self-center">
           Hey!
           <span className="font-bold"> I'm Liam.</span> I'm a Christian,
           student, developer, photographer, roboticist, Pittsburgh and Ohio
           State sports fan, and an avid movie and music consumer. You can
-          usually find me coding or with my{" "}
-          <A href="https://frc8592.org">awesome robotics team</A>.
+          usually find me coding, with my{" "}
+          <A href="https://frc8592.org">awesome robotics team</A>, writing about
+          something, or hanging out with friends.
         </div>
-        <div className="pt-8 text-2xl font-semibold">Recent Blog Posts</div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 w-full">
+        <div className="pt-6 text-2xl font-semibold">Recent Blog Posts</div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
           {sortPostsNewestToOldest(allPosts).map((post) => (
             <BlogCard
               title={post.title}
               date={post.date}
               icon={post.icon}
               slug={post.slug}
+              categories={post.categories}
             />
           ))}
         </div>
