@@ -13,7 +13,7 @@ import Nav from "@/components/Nav/Nav";
 function Home() {
     return (
         <div className="flex justify-center items-center">
-            <div className="h-[100dvh]  min-w-[400px] w-8/12 flex flex-col  items-start gap-y-8 p-8">
+            <div className="h-[100dvh]  w-full lg:max-w-[66.6667%] flex flex-col  items-start gap-y-8 px-12">
                 <Nav />
                 <div className="text-xl font-normal self-center justify-self-center">
                     Hey!
@@ -27,7 +27,7 @@ function Home() {
                 <div className="pt-6 text-2xl font-semibold">
                     Recent Blog Posts
                 </div>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full   ">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full pb-6  ">
                     {sortPostsNewestToOldest(allPosts.slice(0, 2)).map(
                         (post) => (
                             <BlogCard

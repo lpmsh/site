@@ -19,16 +19,16 @@ function BlogCard({ title, date, icon, slug, categories }: BlogCardProps) {
     return (
         <a href={`/blog/${slug}`}>
             <div className=" hover:border-neutral-600 border-neutral-800 border-2 rounded-xl bg-neutral-800 px-8 py-6 text-left w-full">
-                <div className="flex flex-col gap-y-2 md:gap-y-0 md:flex-row justify-between items-center">
+                <div className="flex flex-col gap-y-2  justify-between items-center">
                     <Image src={icon} alt="" width={64} height={64} />
                     <div className="flex flex-col ">
-                        <div className="text-xl font-bold w-full h-full">{title}</div>
-                        <div className="font-light text-md md:text-right text-center">
+                        <div className="text-xl font-bold w-full h-16 flex items-center text-center ">{title}</div>
+                        <div className="font-light text-md  text-center">
                             {getHumanDateFromSlashDate(date)}
                         </div>
                     </div>
                 </div>
-                <div className="flex w-full justify-center md:justify-end items-center  pt-4">
+                <div className="flex w-full justify-center  items-center  pt-4">
                     {categories.map((categoryAbbreviation, index) => {
                         const fullCategory: ContentCategory | undefined =
                             contentCategories.find(
