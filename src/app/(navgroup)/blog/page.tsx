@@ -1,11 +1,11 @@
 import * as React from "react";
 import { allPosts } from "contentlayer/generated";
 import { sortPostsNewestToOldest } from "@/utils/BlogUtils";
-import BlogCard from "@/components/BlogCard";
+import BlogCard from "@/components/Blog/BlogCard";
 
 function Blog() {
   return (
-    <div className="pt-6 grid grid-cols-1  lg:grid-cols-2 xl:grid-cols-3 gap-4 w-full px-12">
+    <div className="py-6 grid grid-cols-1  lg:grid-cols-2 xl:grid-cols-3 gap-4 w-full px-12">
       {sortPostsNewestToOldest(allPosts).map((post) => (
         <div>
           <BlogCard
@@ -15,7 +15,6 @@ function Blog() {
             slug={post.slug}
             categories={post.categories}
           />
-          <div>{JSON.stringify(post.categories)}</div>
         </div>
       ))}
     </div>
