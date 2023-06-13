@@ -5,8 +5,7 @@ icon: "https://cdn.icon-icons.com/icons2/1508/PNG/512/anydo_104098.png"
 categories: ["WebDev"]
 ---
 
-
-_This is a brief tutorial and not a full discussion about webhook security and vulnerabilities. If you would like to learn more checkout the [Svix Docs](https://docs.svix.com/security#preventing-spoofing-attacks) for some awesome resources._
+_This is a brief tutorial and not a full discussion about webhook security and vulnerabilities. If you would like to learn more checkout the [Svix Docs](https://docs.svix.com/security) for some awesome resources._
 
 # Why should you verify webhook requests?
 
@@ -24,15 +23,10 @@ There are several other ways that attackers could mess with your system through 
 
 # How do I verify a webhook request?
 
-{/* According to our 2 main threats above, we need a way to verify that the incoming request to our webhook endpoint is in fact coming from our webhook source (our server, 3rd party, etc) and not a malicious user. We also need a way to make sure that the webhook request is happening for the first time and not being repeated maliciously.
+In this example, we will be verify incoming Clerk Webhook requests using the svix library for Node.js due to the fact that Clerk's webhooks are built on svix's platform.
 
-Addressing the first threat, there are several ways that we can approach this c */}
-In this example, we will be using the svix library for Node.js due to the fact that Clerk's webhooks are built on svix's platform.
+```typescript
+//index.ts
 
-
-
-
-
-<Code 
-    code={`Hello world`}
-/>
+console.log("Hello world")
+```
