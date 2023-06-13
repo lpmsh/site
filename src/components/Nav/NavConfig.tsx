@@ -25,21 +25,22 @@ export const navLinks: NavLink[] = [
         title: "Photos",
         href: "/photos",
     },
-    {
-        title: "Projects",
-        href: "/projects",
-    },
+    // {
+    //     title: "Projects",
+    //     href: "/projects",
+    // },
 ];
 export const navSocials: NavSocial[] = [
-    {
-        icon: (
-            <IconBrandTwitter className="w-8 h-8 text-custom-200 hover:text-custom-300 " />
-        ),
-        bigIcon: (
-            <IconBrandTwitter className="w-12 h-12 text-custom-200 hover:text-custom-300 " />
-        ),
-        href: "https://twitter.com/lmon_25",
-    },
+    // {
+    //     icon: (
+    //         <IconBrandTwitter className="w-8 h-8 text-custom-200 hover:text-custom-300 " />
+    //     ),
+    //     bigIcon: (
+    //         <IconBrandTwitter className="w-12 h-12 text-custom-200 hover:text-custom-300 " />
+    //     ),
+    //     href: "https://twitter.com/lmon_25",
+    // },
+    ///////////////WHEN ADDING TWITTER BACK GO TO Nav.tsx AND CHECK COMMENT TO FIX STYLING
     {
         icon: (
             <IconBrandInstagram className="w-8 h-8 text-custom-200 hover:text-custom-300 " />

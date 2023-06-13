@@ -18,11 +18,13 @@ function Home() {
                 <div className="text-xl font-normal self-center justify-self-center">
                     Hey!
                     <span className="font-bold"> I'm Liam.</span> I'm a
-                    Christian, student, developer, photographer, roboticist,
-                    Pittsburgh and Ohio State sports fan, and an avid movie and
-                    music consumer. You can usually find me coding, with my{" "}
-                    <A href="https://frc8592.org">awesome robotics team</A>,
-                    writing about something, or hanging out with friends.
+                    Christian, student, developer,{" "}
+                    <A href="/photos">photographer</A>, roboticist, Pittsburgh
+                    and Ohio State sports fan, and an avid movie and music
+                    consumer. You can usually find me coding, with my{" "}
+                    <A href="https://frc8592.org">awesome robotics team</A>,{" "}
+                    <A href="/blog">writing about something</A>, or hanging out
+                    with friends.
                 </div>
                 <div className="pt-6 text-2xl font-semibold">
                     Recent Blog Posts

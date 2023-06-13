@@ -1,0 +1,38 @@
+---
+title: "Verifying Clerk Webhook Requests"
+date: "04/10/2023"
+icon: "https://cdn.icon-icons.com/icons2/1508/PNG/512/anydo_104098.png"
+categories: ["WebDev"]
+---
+
+
+_This is a brief tutorial and not a full discussion about webhook security and vulnerabilities. If you would like to learn more checkout the [Svix Docs](https://docs.svix.com/security#preventing-spoofing-attacks) for some awesome resources._
+
+# Why should you verify webhook requests?
+
+This is a pretty straighforward answer. A webhook works by sending an HTTP POST request to a given endpoint. If you create this endpoint, any other user of your app could access this endpoint as well. In order to prevent this we want to verify the incoming reuqest for this endpoint to verify that it is, in fact, coming from a webhook and not a malicious user.
+
+Another vulnarability to consider is a replay attack. According to the [Svix Docs](https://docs.svix.com/receiving/verifying-payloads/why), "A replay attack is when an attacker intercepts a valid payload (including the signature), and re-transmits it to your endpoint. This payload will pass signature validation, and will therefore be acted upon."
+
+There are several other ways that attackers could mess with your system through a webhook endpoint such as payload tampering, sensitive data exposure, and DDoS attacks.
+
+<ImageWithCaption
+    src="https://i.stack.imgur.com/v0Ntk.png"
+    alt="graphql schema"
+    caption="Simplified diagram of a basic webhook flow"
+/>
+
+# How do I verify a webhook request?
+
+{/* According to our 2 main threats above, we need a way to verify that the incoming request to our webhook endpoint is in fact coming from our webhook source (our server, 3rd party, etc) and not a malicious user. We also need a way to make sure that the webhook request is happening for the first time and not being repeated maliciously.
+
+Addressing the first threat, there are several ways that we can approach this c */}
+In this example, we will be using the svix library for Node.js due to the fact that Clerk's webhooks are built on svix's platform.
+
+
+
+
+
+<Code 
+    code={`Hello world`}
+/>

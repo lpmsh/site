@@ -25,9 +25,15 @@ function Nav() {
                 ))}
         
             </div>
-            <div className="hidden md:flex items-center gap-x-4">
+            {/**
+             * @TODO REMOVE `justify-end` and `w-32 when adding twitter back`
+             */}
+            <div className="hidden md:flex items-center justify-end gap-x-4 w-[120px]"> 
                 {navSocials.map((social, index) => (
-                    <NavSocialComponent {...social} big={false} key={index} />
+                    
+
+                        <NavSocialComponent {...social} big={false} key={index} />
+                    
                 ))}
             </div>
             <BurgerNav />

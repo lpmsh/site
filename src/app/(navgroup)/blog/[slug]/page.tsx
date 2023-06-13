@@ -7,6 +7,8 @@ import { useMDXComponent } from "next-contentlayer/hooks";
 import { redirect } from "next/navigation";
 import Image from "next/image";
 import BlogHeader from "@/components/Blog/BlogHeader";
+import A from "@/components/Anchor";
+import Code from "@/components/code";
 
 export async function generateStaticParams() {
   return allPosts.map((post) => ({
@@ -17,7 +19,7 @@ export async function generateStaticParams() {
 const mdxComponents: MDXComponents = {
   // Override the default <a> element to use the next/link component.
   // Add a custom component.
-  a: ({ href, children }) => <Link href={href as string}>{children}</Link>,
+  a: ({ href, children }) => <A target="_blank" href={href as string}>{children}</A>,
   h1: ({ children }) => (
     <h1 className="text-slate-200 text-3xl font-semibold py-2">{children}</h1>
   ),
@@ -30,6 +32,7 @@ const mdxComponents: MDXComponents = {
       <div className="text-md font-light">{caption}</div>
     </div>
   ),
+  Code: ({code}) => (<Code code={code}/>)
 };
 
 export default function Post({ params }: { params: any }) {
