@@ -18,8 +18,8 @@ function Home() {
                 <Nav />
                 <div className="text-xl font-normal self-center justify-self-center">
                     Hey!
-                    <span className="font-bold"> I'm Liam.</span> I'm a
-                    Christian, student, developer,{" "}
+                    <span className="font-bold"> I&apos;m Liam.</span> I&apos;m
+                    a Christian, student, developer,{" "}
                     <A href="/photos">photographer</A>, roboticist, Pittsburgh
                     and Ohio State sports fan, and an avid movie and music
                     consumer. You can usually find me coding, with my{" "}
@@ -35,6 +35,7 @@ function Home() {
                         {sortPostsNewestToOldest(allPosts.slice(0, 2)).map(
                             (post) => (
                                 <BlogCard
+                                    key={post.slug}
                                     title={post.title}
                                     date={post.date}
                                     icon={post.icon}

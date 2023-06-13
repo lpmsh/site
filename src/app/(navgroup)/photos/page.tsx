@@ -43,7 +43,7 @@ import image18Scaled from "../(photos)/image18-scaled.jpg";
 import { useRef } from "react";
 import NextImage, { StaticImageData } from "next/image";
 
-export function useIsVisible(ref: any, scrollCounter: any) {
+function useIsVisible(ref: any, scrollCounter: any) {
   const [isIntersecting, setIntersecting] = useState(false);
 
   useEffect(() => {
