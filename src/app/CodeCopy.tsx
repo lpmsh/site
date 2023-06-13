@@ -33,7 +33,7 @@ function CodeCopy({ children }: { children: any }) {
                 data-tooltip-id="my-tooltip"
                 data-tooltip-content={goodCopy ? "Copied" : "Copy"}
                 data-tooltip-place="top"
-                className="absolute top-0 right-0 m-4 p-2 bg-neutral-700 text-white rounded-md"
+                className="absolute top-0 right-0 mr-4 mt-8 p-2 bg-neutral-700 text-white rounded-md"
                 onClick={() => {
                     navigator.clipboard.writeText(getNodeText(children));
                     setGoodCopy(true);

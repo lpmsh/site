@@ -9,6 +9,7 @@ import BlogCard from "@/components/Blog/BlogCard";
 import { allPosts } from "contentlayer/generated";
 import { sortPostsNewestToOldest } from "@/utils/BlogUtils";
 import Nav from "@/components/Nav/Nav";
+import ItsEmpty from "@/components/ItsEmpty";
 
 function Home() {
     return (
@@ -29,19 +30,23 @@ function Home() {
                 <div className="pt-6 text-2xl font-semibold">
                     Recent Blog Posts
                 </div>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full pb-6  ">
-                    {sortPostsNewestToOldest(allPosts.slice(0, 2)).map(
-                        (post) => (
-                            <BlogCard
-                                title={post.title}
-                                date={post.date}
-                                icon={post.icon}
-                                slug={post.slug}
-                                categories={post.categories}
-                            />
-                        )
-                    )}
-                </div>
+                {sortPostsNewestToOldest(allPosts.slice(0, 2)).length != 0 ? (
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full pb-6  ">
+                        {sortPostsNewestToOldest(allPosts.slice(0, 2)).map(
+                            (post) => (
+                                <BlogCard
+                                    title={post.title}
+                                    date={post.date}
+                                    icon={post.icon}
+                                    slug={post.slug}
+                                    categories={post.categories}
+                                />
+                            )
+                        )}
+                    </div>
+                ) : (
+                    <ItsEmpty />
+                )}
             </div>
         </div>
     );

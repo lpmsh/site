@@ -384,7 +384,6 @@ function Photos() {
           ))}
         </Masonry>
       </ResponsiveMasonry>
-      <div className="text-white text-2xl">{JSON.stringify(image1Visible)}</div>
     </div>
   );
 }
