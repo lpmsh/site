@@ -14,7 +14,7 @@ import ItsEmpty from "@/components/ItsEmpty";
 function Home() {
     return (
         <div className="min-h-screen bg-cover bg-center flex items-center justify-center bg-background">
-            <div className="container mx-auto p-4 min-h-screen">
+            <div className="container mx-auto min-h-screen">
                 <div className="flex justify-center items-center ">
                     <div className="  w-full lg:max-w-[66.6667%] flex flex-col  items-start gap-y-8 px-12">
                         <Nav />
