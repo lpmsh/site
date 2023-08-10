@@ -2,7 +2,14 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 
-const inter = Inter({ subsets: ["latin"] });
+
+import localFont from "next/font/local";
+
+const myFont = localFont({
+    src: "./OffBitTrial-Dot.ttf",
+    display: "swap",
+    variable: "--dot-font",
+});
 
 export const metadata = {
     title: "LPM",
@@ -15,7 +22,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html className="bg-neutral-900" lang="en">
+        <html className={`bg-neutral-900 ${myFont.variable}`} lang="en">
             <body className="font-sans text-slate-200">
                 {children}
                 <Analytics />

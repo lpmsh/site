@@ -7,9 +7,11 @@ import {
 import BurgerNav from "./BurgerNav";
 import { navSocials, navLinks, NavSocialComponent } from "./NavConfig";
 
+ 
+
 function Nav() {
     return (
-        <div className=" flex w-full justify-between items-center gap-x-12 self-start  py-4 ">
+        <div className={` flex w-full justify-between items-center gap-x-12 self-start  py-4 font-dot`}>
             <a href="/" className="text-6xl font-black">
                 LPM
             </a>

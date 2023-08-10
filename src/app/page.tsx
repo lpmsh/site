@@ -13,7 +13,7 @@ import ItsEmpty from "@/components/ItsEmpty";
 
 function Home() {
     return (
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center ">
             <div className="h-[100dvh]  w-full lg:max-w-[66.6667%] flex flex-col  items-start gap-y-8 px-12">
                 <Nav />
                 <div className="text-xl font-normal self-center justify-self-center">
