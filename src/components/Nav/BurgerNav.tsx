@@ -23,9 +23,9 @@ function BurgerNav() {
                     />
                 </button>
             </div>
-            <Dialog as="div" className=" " open={open} onClose={setOpen}>
+            <Dialog as="div" className="font-dot" open={open} onClose={setOpen}>
                 <div className="fixed inset-0 z-50" />
-                <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-neutral-900 px-7  sm:ring-1 sm:ring-gray-900/10">
+                <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-plant px-7  sm:ring-1 sm:ring-gray-900/10">
                     <div className="flex items-center justify-between px-5 py-4">
                         <a href="#" className="-m-1.5 p-1.5 outline-none">
                             <span className="sr-only">LPM</span>
@@ -46,11 +46,11 @@ function BurgerNav() {
                         </button>
                     </div>
                     <div className="mt-6 px-2 flow-root">
-                        <div className="-my-6 divide-y divide-neutral-700 ">
+                        <div className="-my-6 divide-y divide-white-700 ">
                             <div className="space-y-2 py-2 text-xl font-bold flex flex-col">
                                 {navLinks.map((link, index) => (
                                     <a
-                                        className={`text-slate-200 hover:text-slate-300 hover:cursor-pointer hover:bg-neutral-800 rounded-xl p-3`}
+                                        className={`text-slate-200 hover:text-slate-300 hover:cursor-pointer hover:bg-white hover:bg-opacity-[.15] rounded-xl p-3`}
                                         href={link.href}
                                         key={index}
                                     >

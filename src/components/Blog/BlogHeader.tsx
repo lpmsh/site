@@ -42,7 +42,7 @@ function BlogHeader({ title, icon, text }: BlogHeaderProps) {
                             </div>
                         </div>
                     </div>
-                    <div className="w-full bg-neutral-700 h-px mt-6"></div>
+                    <div className="w-full bg-white h-px mt-6"></div>
                 </div>
             </div>
         </div>
