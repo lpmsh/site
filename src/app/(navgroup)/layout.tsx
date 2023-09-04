@@ -7,7 +7,7 @@ export default function NavGroupLayout({
   children: React.ReactNode;
 }) {
   return (
-      <div className="">
+      <div className="bg-bg">
           <div className="px-12">
               <Nav />
           </div>

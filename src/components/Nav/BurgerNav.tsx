@@ -9,7 +9,7 @@ import { navLinks, navSocials, NavSocialComponent } from "./NavConfig";
 function BurgerNav() {
     const [open, setOpen] = useState<boolean>(false);
     return (
-        <div className="inline md:hidden">
+        <div className="inline md:hidden bg-bg">
             <div className="flex ">
                 <button
                     type="button"

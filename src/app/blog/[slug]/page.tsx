@@ -1,14 +1,10 @@
 // app/page.tsx
-import Link from "next/link";
 import type { MDXComponents } from "mdx/types";
-import { compareDesc, format, parseISO } from "date-fns";
 import { allPosts } from "contentlayer/generated";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import { redirect } from "next/navigation";
-import Image from "next/image";
 import BlogHeader from "@/components/Blog/BlogHeader";
 import A from "@/components/Anchor";
-import Code from "@/components/code";
 import CodeCopy from "@/app/CodeCopy";
 import { Metadata } from "next";
 
