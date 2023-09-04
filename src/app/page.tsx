@@ -18,7 +18,7 @@ function Home() {
         <div className="min-h-screen bg-cover bg-center flex items-center justify-center bg-background pb-12">
             <div className="container mx-auto min-h-screen">
                 <div className="flex justify-center items-center ">
-                    <div className="  w-full  flex flex-col  items-start gap-y-8 px-10">
+                    <div className="  w-full max-w-[1000px] flex flex-col  items-start gap-y-8 px-10">
                         <Nav />
                         <div className="text-xl font-normal self-center justify-self-center">
                             Hey!

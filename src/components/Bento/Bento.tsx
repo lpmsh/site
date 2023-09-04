@@ -13,7 +13,7 @@ const bentoConfig: { double: boolean; component: FC }[] = [
 export default function Bento() {
     return (
         <div className="w-full">
-            <Spotlight className="hidden md:grid auto-rows-auto md:auto-rows-[250px] grid-cols-1 sm:grid-cols-2 gap-4">
+            <Spotlight className="hidden md:grid auto-rows-auto md:auto-rows-[275px] grid-cols-1 sm:grid-cols-2 gap-4">
                 {bentoConfig.map((item, i) => {
                     const ItemComponent = item.component;
                     return (

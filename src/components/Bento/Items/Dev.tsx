@@ -27,7 +27,7 @@ export default function DevBento() {
                     >
                         PuppoPool
                     </a>
-                    . My primary skillset includes React, NextJS, Typescript,
+                    . My primary skillset includes React, Tailwind, NextJS, Sanity, Typescript,
                     Prisma, and{" "}
                     <a href="/stack" className="text-blue-200 font-semibold">
                         more
