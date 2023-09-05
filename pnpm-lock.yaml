@@ -80,6 +80,9 @@ dependencies:
   react:
     specifier: 18.2.0
     version: 18.2.0
+  react-animate-height:
+    specifier: ^3.2.2
+    version: 3.2.2(react-dom@18.2.0)(react@18.2.0)
   react-dom:
     specifier: 18.2.0
     version: 18.2.0(react@18.2.0)
@@ -4739,6 +4742,17 @@ packages:
     resolution: {integrity: sha512-vYl3iOX+4CKUWuxGi9Ukhie6fsqXqS9FE2Zaic4tNFD2N2QQaXOMFbuKK4QmDHC0JO6B1Zp41J0LpT0oR68amQ==}
     dependencies:
       safe-buffer: 5.2.1
+    dev: false
+
+  /react-animate-height@3.2.2(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-uUOS+RhYVgyJEWcuAJgelVwhcJ2chsMk7HZCpu+wtjSlFAGSFsHU0r4lMTt47HQ1RdQfI5MmFRt43yHTP9lfmQ==}
+    engines: {node: '>= 12.0.0'}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /react-dom@18.2.0(react@18.2.0):

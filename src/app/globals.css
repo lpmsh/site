@@ -2,13 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-
-
 @import url("https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,300,400&display=swap");
 
+@keyframes slideLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-10px); /* Adjust the distance as needed */
+    }
+}
 
-
-
+.animate-slide-left {
+    animation: slideLeft 0.5s ease-in-out infinite alternate;
+    
+}
 

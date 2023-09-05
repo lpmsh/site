@@ -2,40 +2,30 @@
 
 import Button from "@/components/Button";
 import CodeText from "@/components/CodeText";
-import { IconArrowRight } from "@tabler/icons-react";
+import { IconArrowRight, IconCode } from "@tabler/icons-react";
 
 export default function DevBento() {
     return (
         <div className="relative h-[325px] md:h-full overflow-hidden">
             <div className="flex justify-between  md:justify-normal md:gap-x-2 gap-x-0  items-center pb-2">
                 <div className="text-xl font-bold">Dev</div>
-                <div className="text-xl font-bold text-custom-500">
+                <div>
                     <a href="/dev">
-                        <IconArrowRight />
+                        <IconArrowRight className="text-custom-500" />
                     </a>
                 </div>
             </div>
             <div className="md:max-w-[55%] lg:max-w-[50%] md:flex flex-col gap-y-2">
                 <div className="md:mb-0 mb-4">
-                    I have experience in several areas. Some of my most
-                    prominent projects are{" "}
-                    <a
-                        href="https://studysail.com"
-                        target="_blank"
-                        className="text-cyan-500 font-semibold"
-                    >
+                    I have experience in several areas. Some of my most prominent projects are{" "}
+                    <a href="https://studysail.com" target="_blank" className="text-cyan-500 font-semibold">
                         StudySail
                     </a>{" "}
                     and{" "}
-                    <a
-                        href="https://puppopool.com"
-                        target="_blank"
-                        className="text-amber-200 font-semibold"
-                    >
+                    <a href="https://puppopool.com" target="_blank" className="text-amber-200 font-semibold">
                         PuppoPool
                     </a>
-                    . My primary skillset includes React, Tailwind, NextJS,
-                    Sanity, Typescript, Prisma, and{" "}
+                    . My primary skillset includes React, Tailwind, NextJS, Sanity, Typescript, Prisma, and{" "}
                     <a href="/stack" className="text-blue-200 font-semibold">
                         more
                     </a>
