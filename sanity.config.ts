@@ -28,6 +28,6 @@ export const config = defineConfig({
                     ]),
         }),
         codeInput()
-    ], //[deskTool()],
+    ],
     schema: { types: schemas },
 });

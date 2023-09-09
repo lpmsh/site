@@ -35,7 +35,7 @@ export default async function Home() {
                                 <div className="text-xl font-normal self-center text-left">
                                     I&apos;m a Christian, student, developer, <A href="/photos">photographer</A>, Pittsburgh and Ohio State sports
                                     fan, and can't live without music. You can usually find me coding, with my{" "}
-                                    <A href="https://frc8592.org">awesome robotics team</A>, <A href="/blog">writing about something</A>, or hanging
+                                    <A href="https://frc8592.org">robotics team</A>, <A href="/blog">writing about something</A>, or hanging
                                     out with friends.
                                 </div>
                             </div>
