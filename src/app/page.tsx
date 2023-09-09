@@ -1,7 +1,6 @@
 import * as React from "react";
 import A from "@/components/Anchor";
 import BlogCard from "@/components/Blog/BlogCard";
-import { allPosts } from "contentlayer/generated";
 import { sortPostsNewestToOldest } from "@/utils/BlogUtils";
 import { Header } from "@/components/Nav/Header";
 import ItsEmpty from "@/components/ItsEmpty";
@@ -11,11 +10,14 @@ import pfp from "./pfp.png";
 import SocialLinks from "@/components/Nav/SocialLinks";
 import AnimateHeight from "react-animate-height";
 import { NavDrawer } from "@/components/Nav/NavDrawer";
+import { getPosts } from "@/sanity/post";
 
-function Home() {
+export default async function Home() {
+    const posts = await getPosts();
+
     return (
         <>
-            <NavDrawer homePage/>
+            <NavDrawer homePage />
             <div className="min-h-screen bg-cover bg-center flex items-center justify-center bg-background pb-12">
                 <div className="container mx-auto min-h-screen">
                     <div className="flex justify-center items-start ">
@@ -42,17 +44,10 @@ function Home() {
                             <Bento />
                             <div className="pt-6 text-2xl font-semibold">Recent Blog Posts</div>
 
-                            {sortPostsNewestToOldest(allPosts.slice(0, 2)).length != 0 ? (
+                            {sortPostsNewestToOldest(posts.slice(0, 2)).length != 0 ? (
                                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full pb-6  ">
-                                    {sortPostsNewestToOldest(allPosts.slice(0, 2)).map((post) => (
-                                        <BlogCard
-                                            key={post.slug}
-                                            title={post.title}
-                                            date={post.date}
-                                            icon={post.icon}
-                                            slug={post.slug}
-                                            categories={post.categories}
-                                        />
+                                    {sortPostsNewestToOldest(posts.slice(0, 2)).map((post) => (
+                                        <BlogCard {...post} />
                                     ))}
                                 </div>
                             ) : (
@@ -65,5 +60,3 @@ function Home() {
         </>
     );
 }
-
-export default Home;

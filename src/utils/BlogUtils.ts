@@ -1,9 +1,9 @@
-import { Post } from "contentlayer/generated";
+import { PostWithoutContent, Post } from "@/sanity/post";
 
-export function sortPostsNewestToOldest(posts: Post[]) {
+export function sortPostsNewestToOldest(posts: Array<Post | PostWithoutContent>) {
   return posts.sort(function compareFn(a, b) {
-    const aDate = new Date(a.date);
-    const bDate = new Date(b.date);
+    const aDate = new Date(a._createdAt);
+    const bDate = new Date(b._createdAt);
     if (aDate < bDate) {
       return 1;
     }
