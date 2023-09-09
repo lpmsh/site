@@ -17,7 +17,7 @@ const getNodeText = (node: any): any => {
     if (typeof node === "object" && node)
         return getNodeText(node.props.children);
 };
-function CodeCopy({ children }: { children: any }) {
+function CodeCopy({ text }: { text: string }) {
     const [goodCopy, setGoodCopy] = useState<boolean>(false);
 
     useEffect(() => {
@@ -35,7 +35,7 @@ function CodeCopy({ children }: { children: any }) {
                 data-tooltip-place="top"
                 className="absolute top-0 right-0 mr-4 mt-8 p-2 bg-neutral-700 text-white rounded-md"
                 onClick={() => {
-                    navigator.clipboard.writeText(getNodeText(children));
+                    navigator.clipboard.writeText(getNodeText(text));
                     setGoodCopy(true);
                 }}
             >

@@ -1,51 +1,18 @@
 import * as React from "react";
-import Image from "next/image";
-import { getHumanDateFromSlashDate, getMonthName } from "@/utils/DateUtils";
-import {
-    CategoryAbbreviation,
-    ContentCategory,
-    contentCategories,
-} from "@/utils/ContentCategories";
-import Chip from "@/components/Chip";
-interface BlogCardProps {
-    title: string;
-    date: string;
-    icon: string;
-    slug: string;
-    categories: CategoryAbbreviation[];
-}
+import { getHumanDateFromSlashDate } from "@/utils/DateUtils";
+import { PostWithoutContent } from "@/sanity/post";
+import { SanityImageComponent } from "@/sanity/utils/SanityImageComponent";
 
-function BlogCard({ title, date, icon, slug, categories }: BlogCardProps) {
+function BlogCard({ title, _createdAt, icon, slug }: PostWithoutContent) {
     return (
         <a href={`/blog/${slug}`}>
             <div className=" hover:border-neutral-600 border-neutral-800 border-2 rounded-xl bg-neutral-800 px-8 py-6 text-left w-full">
                 <div className="flex flex-col gap-y-2  justify-between items-center">
-                    <Image src={icon} alt="" width={64} height={64} />
+                    <SanityImageComponent value={icon} className="w-[64px] h-[64px]" />
                     <div className="flex flex-col ">
-                        <div className="text-xl font-bold w-full h-16 flex items-center text-center ">{title}</div>
-                        <div className="font-light text-md  text-center">
-                            {getHumanDateFromSlashDate(date)}
-                        </div>
+                        <div className="text-xl font-bold w-full h-16 flex items-center text-center text-white ">{title}</div>
+                        <div className="font-light text-md  text-center">{getHumanDateFromSlashDate(_createdAt)}</div>
                     </div>
-                </div>
-                <div className="flex w-full justify-center  items-center  pt-4">
-                    {categories.map((categoryAbbreviation, index) => {
-                        const fullCategory: ContentCategory | undefined =
-                            contentCategories.find(
-                                (category) =>
-                                    category.abbreviation ==
-                                    categoryAbbreviation
-                            );
-                        if (fullCategory)
-                            return (
-                                <Chip
-                                    className="w-24 border-neutral-500 bg-neutral-700 text-slate-200"
-                                    title={fullCategory?.abbreviation}
-                                />
-                            );
-
-                        return null;
-                    })}
                 </div>
             </div>
         </a>
