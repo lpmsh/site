@@ -15,7 +15,7 @@ import { NavDrawer } from "@/components/Nav/NavDrawer";
 function Home() {
     return (
         <>
-            <NavDrawer />
+            <NavDrawer homePage/>
             <div className="min-h-screen bg-cover bg-center flex items-center justify-center bg-background pb-12">
                 <div className="container mx-auto min-h-screen">
                     <div className="flex justify-center items-start ">

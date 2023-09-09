@@ -1,4 +1,4 @@
-import { Icon, IconCamera, IconPencil, TablerIconsProps } from "@tabler/icons-react";
+import { Icon, IconCamera, IconCode, IconHome, IconPencil, TablerIconsProps } from "@tabler/icons-react";
 import { cn } from "@/utils/cn";
 
 export interface NavLink {
@@ -7,10 +7,15 @@ export interface NavLink {
     href: NavHref;
 }
 
-export const navLinkHrefs = ["/blog", "/photos"] as const;
+export const navLinkHrefs = ["/blog", "/photos", "/", "/dev"] as const;
 export type NavHref = (typeof navLinkHrefs)[number];
 
 export const navLinks: NavLink[] = [
+    {
+        icon: IconHome,
+        title: "Home",
+        href: "/"
+    },
     {
         icon: IconPencil,
         title: "Blog",
@@ -21,9 +26,10 @@ export const navLinks: NavLink[] = [
         title: "Photos",
         href: "/photos",
     },
-    // {
-    //     title: "Projects",
-    //     href: "/projects",
-    // },
+    {
+        icon: IconCode,
+        title: "Dev",
+        href: "/dev",
+    },
 ];
 

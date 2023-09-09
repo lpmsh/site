@@ -22,7 +22,7 @@ export function useNavDrawer() {
     return useContext(NavDrawerContext);
 }
 
-export function NavDrawer() {
+export function NavDrawer({ homePage }: { homePage?: boolean }) {
     const { open, setOpen } = useNavDrawer();
     const [currentPage, setCurrentPage] = useState<NavHref>("/photos");
     return (
@@ -30,17 +30,29 @@ export function NavDrawer() {
             id="example-panel"
             duration={500}
             className="bg-custom-400 px-4 sm:px-10  w-full mx-auto bg-center  items-center justify-center  "
-            height={open ? 300 : 0}
+            height={open ? "auto" : 0}
         >
-            <div className="container mx-auto min-h-screen pt-10">
-                <div className="flex justify-center items-start ">
-                    <div className="  w-full max-w-[1000px] flex flex-col  items-start gap-y-8 px-4 sm:px-10">
-                        {navLinks.map((link, index) => (
-                            <NavDrawerLink link={link} key={index} />
-                        ))}
+            {homePage ? (
+                <div className="container mx-auto py-10">
+                    <div className="flex justify-center items-start ">
+                        <div className="  w-full max-w-[1000px] flex flex-col  items-start gap-y-8 px-4 sm:px-10">
+                            {navLinks.map((link, index) => (
+                                <NavDrawerLink link={link} key={index} />
+                            ))}
+                        </div>
                     </div>
                 </div>
-            </div>
+            ) : (
+                <div className="container mx-auto py-10">
+                    <div className="flex justify-center items-start ">
+                        <div className="  w-full flex flex-col  items-start gap-y-8">
+                            {navLinks.map((link, index) => (
+                                <NavDrawerLink link={link} key={index} />
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            )}
         </AnimateHeight>
     );
 }
@@ -56,7 +68,7 @@ function NavDrawerLink({ link }: { link: NavLink }) {
     function parsePath(path: string) {
         const split = path.split("/");
 
-        split.shift()
+        split.shift();
 
         return split[0];
     }
