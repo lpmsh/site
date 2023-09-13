@@ -8,7 +8,10 @@ export default function DevBento() {
     return (
         <div className="relative h-[325px] md:h-full overflow-hidden">
             <div className="flex justify-between  md:justify-normal md:gap-x-2 gap-x-0  items-center pb-2">
-                <div className="text-xl font-bold">Dev</div>
+                <div className="flex items-center gap-x-2">
+                    <IconCode/>
+                    <div className="text-xl font-bold">Dev</div>
+                </div>
                 <div>
                     <a href="/dev">
                         <IconArrowRight className="text-custom-500" />

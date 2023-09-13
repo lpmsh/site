@@ -42,7 +42,7 @@ export default async function Home() {
 
                             {/* </div> */}
                             <Bento />
-                            <div className="pt-6 text-2xl font-semibold">Recent Blog Posts</div>
+                            {/* <div className="pt-6 text-2xl font-semibold">Recent Blog Posts</div>
 
                             {sortPostsNewestToOldest(posts.slice(0, 2)).length != 0 ? (
                                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full pb-6  ">
@@ -52,7 +52,7 @@ export default async function Home() {
                                 </div>
                             ) : (
                                 <ItsEmpty />
-                            )}
+                            )} */}
                         </div>
                     </div>
                 </div>

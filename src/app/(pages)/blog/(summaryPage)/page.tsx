@@ -6,7 +6,7 @@ import ItsEmpty from "@/components/ItsEmpty";
 export default async function Blog() {
     const posts = await getPosts();
     return (
-        <div className="md:px-12">
+        <div className="">
             <div className=" py-6 grid grid-cols-1  lg:grid-cols-2 xl:grid-cols-3 gap-4 w-full ">
                 {posts.length != 0 ? (
          

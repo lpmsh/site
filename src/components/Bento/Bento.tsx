@@ -1,13 +1,14 @@
 import { FC, ReactNode } from "react";
 import PhotoBento from "./Items/Photo";
 import DevBento from "./Items/Dev";
+import BlogBento from "./Items/Blog";
 
 import Spotlight, { SpotlightCard } from "../Spotlight";
 
 const bentoConfig: { double: boolean; component: FC }[] = [
     { double: true, component: DevBento },
     { double: false, component: PhotoBento },
-    { double: false, component: () => <div>Other</div> },
+    { double: false, component: BlogBento },
 ];
 
 export default function Bento() {
