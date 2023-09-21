@@ -29,30 +29,15 @@ export function NavDrawer({ homePage }: { homePage?: boolean }) {
         <AnimateHeight
             id="example-panel"
             duration={500}
-            className="bg-custom-400 px-4 sm:px-10  w-full mx-auto bg-center  items-center justify-center  "
+            className="bg-bg  w-full mx-auto bg-center  items-center justify-center"
             height={open ? "auto" : 0}
         >
-            {homePage ? (
-                <div className="container mx-auto py-10">
-                    <div className="flex justify-center items-start ">
-                        <div className="  w-full max-w-[1000px] flex flex-col  items-start gap-y-8 px-4 sm:px-10">
-                            {navLinks.map((link, index) => (
-                                <NavDrawerLink link={link} key={index} />
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            ) : (
-                <div className="container mx-auto py-10">
-                    <div className="flex justify-center items-start ">
-                        <div className="  w-full flex flex-col  items-start gap-y-8">
-                            {navLinks.map((link, index) => (
-                                <NavDrawerLink link={link} key={index} />
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            )}
+
+            <div className="flex w-full items-center justify-center py-10">
+                {navLinks.map((link, index) => (
+                    <NavDrawerLink link={link} key={index} />
+                ))}
+            </div>
         </AnimateHeight>
     );
 }
@@ -79,17 +64,14 @@ function NavDrawerLink({ link }: { link: NavLink }) {
 
     return (
         <div
-            className="text-black font-semibold text-6xl flex gap-x-2 items-center hover:cursor-pointer"
-            onMouseEnter={() => setIsHovering(true)}
-            onMouseLeave={() => setIsHovering(false)}
+            className="text-white p-2 font-semibold text-6xl flex gap-x-2 items-center justify-start hover:cursor-pointer"
             onClick={() => {
                 push(href);
                 setOpen(false);
             }}
         >
-            <Icon className="w-12 h-12" />
-            <div>{title}</div>
-            {isCurrentPage && <IconArrowLeft className={"animate-slide-left ml-8 w-10 h-10"} />}
+            <Icon className="w-12 h-12 text-custom-500" />
+            {/* <div>{title}</div> */}
         </div>
     );
 }
