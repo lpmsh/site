@@ -25,12 +25,11 @@ export default async function Home() {
                             <Header />
                             {/* <div className="px-10"> */}
 
-                            <div className="flex w-full items-center justify-between">
-                                <Image src={pfp} alt="avatar" quality={100} className="rounded-full w-[120px] h-[120px]" />
-                                <div className="text-5xl lg:text-6xl font-bold text-white md:inline hidden ">Hi, I'm Liam 👋</div>
+                            <div className="flex md:flex-row flex-col-reverse w-full items-start md:items-center gap-y-6 justify-between">
+                                {/* <Image src={pfp} alt="avatar" quality={100} className="rounded-full w-[120px] h-[120px]" /> */}
+                                <div className="text-5xl lg:text-6xl font-bold text-white ">Hi, I'm Liam 👋</div>
                                 <SocialLinks />
                             </div>
-                            <div className="text-4xl md:text-6xl font-bold text-white md:hidden inline text-center px-2 ">Hi, I'm Liam 👋</div>
                             <div className="flex w-full justify-center px-2">
                                 <div className="text-xl font-normal self-center text-left">
                                     I&apos;m a Christian, student, developer, <A href="/photos">photographer</A>, Pittsburgh and Ohio State sports
