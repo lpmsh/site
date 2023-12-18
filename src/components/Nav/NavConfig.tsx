@@ -31,10 +31,10 @@ export const navLinks: NavLink[] = [
         title: "Dev",
         href: "/dev",
     },
-    {
-        icon: IconBackpack,
-        title: "Gear",
-        href: "/gear",
-    },
+    // {
+    //     icon: IconBackpack,
+    //     title: "Gear",
+    //     href: "/gear",
+    // },
 ];
 
