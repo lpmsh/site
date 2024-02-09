@@ -2,10 +2,10 @@ import { IconArrowRight, IconCamera } from "@tabler/icons-react";
 
 export default function PhotoBento() {
     return (
-        <div className="relative h-[325px] md:h-full overflow-hidden">
+        <div className="relative h-fit overflow-hidden">
             <div className="flex justify-between  md:justify-normal md:gap-x-2 gap-x-0  items-center pb-2">
                 <div className="flex items-center gap-x-2">
-                    <IconCamera/>
+                    <IconCamera />
                     <div className="text-xl font-bold">Photography</div>
                 </div>
                 <div>
@@ -15,9 +15,7 @@ export default function PhotoBento() {
                 </div>
             </div>
 
-            <div className="md:mb-0 mb-4">
-                Photography is a passion of mine. I like to shoot just about anything!
-            </div>
+            <div>Photography is a passion of mine. I like to shoot just about anything!</div>
         </div>
     );
 }
