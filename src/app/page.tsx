@@ -33,9 +33,7 @@ export default async function Home() {
                             <div className="flex w-full justify-center px-2">
                                 <div className="text-xl font-normal self-center text-left">
                                     I&apos;m a Christian, student, developer, <A href="/photos">photographer</A>, Pittsburgh and Ohio State sports
-                                    fan, and can't live without music. You can usually find me coding, with my{" "}
-                                    <A href="https://frc8592.org">robotics team</A>, <A href="/blog">writing about something</A>, or hanging out with
-                                    friends.
+                                    fan, and can't live without music. You can usually find me <A href="https://github.com/slyguy5646" target="_blank">coding</A> or hanging out with friends.
                                 </div>
                             </div>
 
@@ -52,7 +50,9 @@ export default async function Home() {
                             ) : (
                                 <ItsEmpty />
                             )} */}
-                            <a className="text-3xl w-full text-center" href="https://light.lpm.sh">💡</a>
+                            <a className="text-3xl w-full text-center" href="https://light.lpm.sh">
+                                💡
+                            </a>
                         </div>
                     </div>
                 </div>
