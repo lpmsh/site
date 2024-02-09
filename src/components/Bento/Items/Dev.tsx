@@ -6,7 +6,7 @@ import { IconArrowRight, IconCode } from "@tabler/icons-react";
 
 export default function DevBento() {
     return (
-        <div className="h-full w-full flex md:flex-row flex-col items-center justify-between">
+        <div className="h-full w-full flex md:flex-row flex-col items-center justify-between gap-x-4">
             <div className="flex-[0.5] w-full flex flex-col justify-start h-full">
                 <div className="flex justify-between  md:justify-normal md:gap-x-2 gap-x-0  items-center pb-2 w-full">
                     <div className="flex items-center gap-x-2">
