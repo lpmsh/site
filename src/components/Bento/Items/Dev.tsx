@@ -28,8 +28,12 @@ export default function DevBento() {
                         and{" "}
                         <a href="https://puppopool.com" target="_blank" className="text-amber-200 font-semibold">
                             PuppoPool
-                        </a>
-                        . My primary skillset includes React, Tailwind, NextJS, Sanity, Typescript, Prisma, and{" "}
+                        </a>{" "}
+                        and I'm currently hacking on{" "}
+                        <a href="https://studysail.com" target="_blank" className="text-[#F3DD51] font-semibold">
+                            Mergi
+                        </a>{" "}
+                        My primary skillset includes React, Tailwind, NextJS, Sanity, Typescript, Prisma, and{" "}
                         <a href="/stack" className="text-blue-200 font-semibold">
                             more
                         </a>

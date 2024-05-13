@@ -12,7 +12,7 @@ export default function SocialLinks() {
             </a>
             <a
                 className="text-white transition duration-300 delay-75 ease-in-out hover:text-custom-500"
-                href="https://www.linkedin.com/in/liam-monaghan-a1a45728a/"
+                href="https://www.linkedin.com/in/liampmonaghan/"
                 target="_blank"
             >
                 <IconBrandLinkedin className="w-8 h-8"/>
