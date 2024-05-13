@@ -1,20 +1,19 @@
 "use client";
 
-import Button from "@/components/Button";
 import CodeText from "@/components/CodeText";
 import { IconArrowRight, IconCode } from "@tabler/icons-react";
 
-export default function DevBento() {
+export function ProjectsBento() {
     return (
         <div className="h-full w-full flex md:flex-row flex-col items-center justify-between gap-x-4">
             <div className="flex-[0.5] w-full flex flex-col justify-start h-full">
                 <div className="flex justify-between  md:justify-normal md:gap-x-2 gap-x-0  items-center pb-2 w-full">
                     <div className="flex items-center gap-x-2">
                         <IconCode />
-                        <div className="text-xl font-bold">Dev</div>
+                        <div className="text-xl font-bold">Projects</div>
                     </div>
                     <div>
-                        <a href="/dev">
+                        <a href="/projects">
                             <IconArrowRight className="text-custom-500" />
                         </a>
                     </div>
@@ -22,15 +21,15 @@ export default function DevBento() {
                 <div className="w-full md:flex flex-col gap-y-2">
                     <div className="md:mb-0 mb-4">
                         I have experience in several areas. Some of my most prominent projects are{" "}
-                        <a href="https://studysail.com" target="_blank" className="text-cyan-500 font-semibold">
+                        <a href="/projects" className="text-cyan-500 font-semibold">
                             StudySail
                         </a>{" "}
                         and{" "}
-                        <a href="https://puppopool.com" target="_blank" className="text-amber-200 font-semibold">
+                        <a href="/projects" className="text-amber-200 font-semibold">
                             PuppoPool
                         </a>{" "}
                         and I'm currently hacking on{" "}
-                        <a href="https://studysail.com" target="_blank" className="text-[#F3DD51] font-semibold">
+                        <a href="https://mergi.co" target="_blank" className="text-[#F3DD51] font-semibold">
                             Mergi
                         </a>{" "}
                         My primary skillset includes React, Tailwind, NextJS, Sanity, Typescript, Prisma, and{" "}

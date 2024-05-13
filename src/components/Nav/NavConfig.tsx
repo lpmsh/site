@@ -7,7 +7,7 @@ export interface NavLink {
     href: NavHref;
 }
 
-export const navLinkHrefs = ["/blog", "/photos", "/", "/dev", "/gear"] as const;
+export const navLinkHrefs = ["/blog", "/photos", "/", "/dev", "/gear", "/projects"] as const;
 export type NavHref = (typeof navLinkHrefs)[number];
 
 export const navLinks: NavLink[] = [
@@ -28,8 +28,8 @@ export const navLinks: NavLink[] = [
     },
     {
         icon: IconCode,
-        title: "Dev",
-        href: "/dev",
+        title: "Projects",
+        href: "/projects",
     },
     // {
     //     icon: IconBackpack,
