@@ -18,8 +18,8 @@ export default async function Home() {
     return (
         <>
             <NavDrawer homePage />
-            <div className="min-h-screen bg-cover bg-center flex items-center justify-center bg-background pb-12">
-                <div className="container mx-auto min-h-screen">
+            <div className="bg-cover bg-center flex items-center justify-center bg-background h-dvh">
+                <div className="container mx-auto">
                     <div className="flex justify-center items-start ">
                         <div className="  w-full max-w-[1000px] flex flex-col  items-start gap-y-8 px-4 sm:px-10">
                             <Header />
