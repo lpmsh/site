@@ -45,7 +45,7 @@ const projects: Project[] = [
 export default function ProjectsPage() {
     return (
         <div>
-            <div className="text-4xl font-bold md:text-left text-center">Projects</div>
+            <div className="text-4xl font-bold text-left">Projects</div>
             <div className="flex flex-col gap-y-3 mt-4">
                 {projects.map((p, i) => (
                     <ProjectCard key={i} {...p} />

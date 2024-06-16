@@ -2,7 +2,7 @@ import { IconBrandTwitter, IconBrandGithub, IconBrandInstagram, IconBrandLinkedi
 
 export default function SocialLinks() {
     return (
-        <div className="rounded-xl bg-neutral-900 border-2 border-neutral-400/10 flex gap-x-2 p-4">
+        <div className="rounded-xl  flex gap-x-2 w-fit">
             <a
                 className="text-white transition duration-300 delay-75 ease-in-out hover:text-neutral-300"
                 href="https://github.com/slyguy5646"

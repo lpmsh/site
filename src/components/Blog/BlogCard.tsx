@@ -1,22 +1,33 @@
+"use client";
+
 import * as React from "react";
 import { getHumanDateFromSlashDate } from "@/utils/DateUtils";
 import { PostWithoutContent } from "@/sanity/post";
 import { SanityImageComponent } from "@/sanity/utils/SanityImageComponent";
 import Card from "../Card";
+import { useRouter } from "next/navigation";
+import { getPostDate } from "@/sanity/utils/date";
+import { motion } from "framer-motion";
 
 function BlogCard({ title, _createdAt, icon, slug }: PostWithoutContent) {
+    const { push } = useRouter();
     return (
-        <a href={`/blog/${slug}`}>
-            <Card className="px-8 py-6 text-left w-full">
-                <div className="flex flex-col gap-y-2  justify-between items-center">
-                    <SanityImageComponent value={icon} className="w-[64px] h-[64px]" />
-                    <div className="flex flex-col ">
-                        <div className="text-xl font-bold w-full h-16 flex items-center text-center text-white ">{title}</div>
-                        <div className="font-light text-md  text-center">{getHumanDateFromSlashDate(_createdAt)}</div>
-                    </div>
-                </div>
-            </Card>
-        </a>
+        <motion.div
+            onClick={() => push(`/blog/${slug}`)}
+            initial={{
+                padding: 0,
+            }}
+            whileHover={{
+                paddingLeft: 2,
+                paddingRight: 2
+            }}
+            className=" py-1 hover:bg-black hover:bg-opacity-[0.05] hover:cursor-pointer transition duration-300 ease-in-out w-full flex gap-x-2 items-center"
+        >
+            <div className=" flex justify-between items-center w-full">
+                <div className=" flex gap-x-2 items-center">{title}</div>
+                <span className="text-[#FFFFFF75]">{getPostDate(_createdAt).toLocaleDateString() + "\t"}</span>
+            </div>
+        </motion.div>
     );
 }
 

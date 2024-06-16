@@ -9,58 +9,33 @@ import Image from "next/image";
 import pfp from "./pfp.png";
 import SocialLinks from "@/components/Nav/SocialLinks";
 import AnimateHeight from "react-animate-height";
-import { NavDrawer } from "@/components/Nav/NavDrawer";
 import { getPosts } from "@/sanity/post";
 
 export default async function Home() {
     const posts = await getPosts();
 
     return (
-        <>
-            <NavDrawer homePage />
-            <div className="bg-cover bg-center flex items-center justify-center bg-background h-dvh">
-                <div className="container mx-auto">
-                    <div className="flex justify-center items-start ">
-                        <div className="  w-full max-w-[1000px] flex flex-col  items-start gap-y-8 px-4 sm:px-10">
-                            <Header />
-                            {/* <div className="px-10"> */}
-
-                            <div className="flex md:flex-row flex-col-reverse w-full items-start md:items-center gap-y-6 justify-between">
-                                {/* <Image src={pfp} alt="avatar" quality={100} className="rounded-full w-[120px] h-[120px]" /> */}
-                                <div className="text-5xl lg:text-6xl font-bold text-white ">Hi, I'm Liam 👋</div>
-                                <SocialLinks />
-                            </div>
-                            <div className="flex w-full justify-center px-2">
-                                <div className="text-xl font-normal self-center text-left">
-                                    I&apos;m a Christian, student, developer, <A href="/photos">photographer</A>, Pittsburgh and Ohio State sports
-                                    fan, and can't live without music. You can usually find me{" "}
-                                    <A href="https://github.com/slyguy5646" target="_blank">
-                                        coding
-                                    </A>{" "}
-                                    or hanging out with friends.{" "}
-                                    <a className=" w-full text-center" target="_blank" href="https://light.lpm.sh">
-                                        💡
-                                    </a>
-                                </div>
-                            </div>
-
-                            {/* </div> */}
-                            <Bento />
-                            {/* <div className="pt-6 text-2xl font-semibold">Recent Blog Posts</div>
-
-                            {sortPostsNewestToOldest(posts.slice(0, 2)).length != 0 ? (
-                                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full pb-6  ">
-                                    {sortPostsNewestToOldest(posts.slice(0, 2)).map((post) => (
-                                        <BlogCard {...post} />
-                                    ))}
-                                </div>
-                            ) : (
-                                <ItsEmpty />
-                            )} */}
+        <div className="bg-cover bg-center flex items-center justify-center bg-background min-h-dvh">
+            <div className="flex justify-center items-start ">
+                <div className="  w-full flex flex-col  items-start gap-y-8">
+                    <div className="text-5xl lg:text-6xl font-bold text-white ">Hi, I'm Liam 👋</div>
+                    <div className="flex w-full justify-center px-2">
+                        <div className="text-xl font-normal self-center text-left">
+                            I&apos;m a Christian, student, developer, <A href="/photos">photographer</A>, Pittsburgh and Ohio State sports fan, and
+                            can't live without music. You can usually find me{" "}
+                            <A href="https://github.com/slyguy5646" target="_blank">
+                                coding
+                            </A>{" "}
+                            or hanging out with friends.{" "}
+                            <a className=" w-full text-center" target="_blank" href="https://light.lpm.sh">
+                                💡
+                            </a>
                         </div>
                     </div>
+
+                    <Bento />
                 </div>
             </div>
-        </>
+        </div>
     );
 }

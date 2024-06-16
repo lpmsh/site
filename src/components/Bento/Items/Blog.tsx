@@ -1,6 +1,8 @@
+import BlogCard from "@/components/Blog/BlogCard";
+import { PostWithoutContent } from "@/sanity/post";
 import { IconArrowRight, IconPencil } from "@tabler/icons-react";
 
-export default function BlogBento() {
+export default function BlogBento({ posts }: { posts: PostWithoutContent[] }) {
     return (
         <div className="relative h-fit overflow-hidden">
             <div className="flex justify-between  md:justify-normal md:gap-x-2 gap-x-0  items-center pb-2">
@@ -15,7 +17,13 @@ export default function BlogBento() {
                 </div>
             </div>
 
-            <div>I'm starting to write about new ideas and learning new tech! Check it out...</div>
+            {posts && posts.length != 0 && (
+                <div className="flex flex-col gap-y-2 w-full pt-1">
+                    {posts.map((post) => (
+                        <BlogCard {...post} />
+                    ))}
+                </div>
+            )}
         </div>
     );
 }

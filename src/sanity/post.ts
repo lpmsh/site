@@ -37,7 +37,7 @@ export type PostWithoutContent = ExcludeField<Post, "content">;
 
 export interface Post {
     _id: string;
-    _createdAt: Date;
+    _createdAt: string;
     title: string;
     slug: string;
     icon: string;

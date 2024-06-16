@@ -1,6 +1,4 @@
 import { GearImageCarousel } from "@/components/Gear/GearImageCarousel";
-import { Header } from "@/components/Nav/Header";
-import { NavDrawer } from "@/components/Nav/NavDrawer";
 import { getGearPost } from "@/sanity/gear";
 
 export default async function GearPost({ params: { slug } }: { params: { slug: string } }) {

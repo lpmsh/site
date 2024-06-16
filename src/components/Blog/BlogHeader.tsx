@@ -1,7 +1,10 @@
+"use client";
+
 import * as React from "react";
 import * as ReadingTime from "reading-time";
 import A from "../Anchor";
 import { SanityImageComponent } from "@/sanity/utils/SanityImageComponent";
+import { useRouter } from "next/navigation";
 
 interface BlogHeaderProps {
     title: string;
@@ -11,13 +14,14 @@ interface BlogHeaderProps {
 
 function BlogHeader({ title, icon, text }: BlogHeaderProps) {
     const readTime = ReadingTime.default(text);
+    const { back, push } = useRouter();
 
     return (
         <div>
             <div className="flex w-full justify-start">
-                <A href="/blog" className="text-neutral-400  hover:text-neutral-500 text-left">
+                <button onClick={() => push("/blog")} className="text-neutral-400  hover:text-neutral-500 text-left">
                     &larr;
-                </A>
+                </button>
             </div>
             <div>
                 <div>
