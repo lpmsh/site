@@ -25,7 +25,7 @@ function BlogCard({ title, _createdAt, icon, slug }: PostWithoutContent) {
         >
             <div className=" flex justify-between items-center w-full">
                 <div className=" flex gap-x-2 items-center">{title}</div>
-                <span className="text-[#FFFFFF75]">{getPostDate(_createdAt).toLocaleDateString() + "\t"}</span>
+                <span className="text-neutral-400">{getPostDate(_createdAt).toLocaleDateString() + "\t"}</span>
             </div>
         </motion.div>
     );
