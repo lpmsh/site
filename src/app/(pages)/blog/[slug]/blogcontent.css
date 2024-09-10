@@ -22,7 +22,7 @@ li li li {
 }
 
 h1 {
-  @apply text-slate-200 text-3xl font-semibold py-2;
+  @apply text-black text-3xl font-semibold py-2;
 }
 
 h2 {
@@ -30,7 +30,7 @@ h2 {
 }
 
 h3 {
-  @apply text-slate-200 text-xl font-semibold py-2;
+  @apply text-black text-xl font-semibold py-2;
 }
 h4 {
   @apply text-3xl pb-4;
@@ -51,5 +51,5 @@ blockquote {
 }
 
 a {
-    @apply text-custom-400 hover:text-custom-500;
+    @apply text-custom-500 hover:text-custom-600;
 }

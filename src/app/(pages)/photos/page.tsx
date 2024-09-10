@@ -362,30 +362,46 @@ function Photos() {
   ];
 
   return (
-    <div className="photos">
-      <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
-        <Masonry>
-          {/* {renderPhotos} */}
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
           {images.map(({ visible, fullSrc, smallSrc, ref }, index) => (
-            <NextImage
-              key={index}
-              ref={ref}
-              src={visible || index <= 3 ? fullSrc : smallSrc}
-              // style={{ width: "100%", display: "block" }}
+              <NextImage
+                  key={index}
+                  ref={ref}
+                  src={visible || index <= 3 ? fullSrc : smallSrc}
+                  // style={{ width: "100%", display: "block" }}
 
-              style={{
-                width: "100%",
-                display: "block",
-                filter: index > 3 && !visible ? "blur(2px)" : "none",
-                // transition: image1Blur ? "none" : "filter 0.3s ease-out",
-              }}
-              alt=""
-            />
+                  style={{
+                      width: "100%",
+                      display: "block",
+                      filter: index > 3 && !visible ? "blur(2px)" : "none",
+                      // transition: image1Blur ? "none" : "filter 0.3s ease-out",
+                  }}
+                  alt=""
+              />
           ))}
-        </Masonry>
-      </ResponsiveMasonry>
-    </div>
+      </div>
   );
 }
+      // <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
+      //   <Masonry>
+      //     {/* {renderPhotos} */}
+      //     {images.map(({ visible, fullSrc, smallSrc, ref }, index) => (
+      //       <NextImage
+      //         key={index}
+      //         ref={ref}
+      //         src={visible || index <= 3 ? fullSrc : smallSrc}
+      //         // style={{ width: "100%", display: "block" }}
+
+      //         style={{
+      //           width: "100%",
+      //           display: "block",
+      //           filter: index > 3 && !visible ? "blur(2px)" : "none",
+      //           // transition: image1Blur ? "none" : "filter 0.3s ease-out",
+      //         }}
+      //         alt=""
+      //       />
+      //     ))}
+      //   </Masonry>
+      // </ResponsiveMasonry>
 
 export default Photos;

@@ -14,7 +14,7 @@ import CodeCopy from "@/components/CodeCopy";
 const BlockContentImageComponent = ({ value, isInline }: { value: any; isInline?: any }) => {
     const { width, height } = getImageDimensions(value);
     return (
-        <div className="py-3 flex flex-col items-center">
+        <div className="mb-8">
             <div className="">
                 <img
                     src={urlBuilder(clientConfig)

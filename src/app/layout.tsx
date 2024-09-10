@@ -1,5 +1,5 @@
 import "./globals.css";
-import { Inter } from "next/font/google";
+import { JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 
 import localFont from "next/font/local";
@@ -11,16 +11,15 @@ export const metadata = {
     description: "LPM Portfolio Site",
 };
 
-// Font files can be colocated inside of `app`
-const satoshi = localFont({
-    src: "../assets/satoshi.ttf",
+const jbMono = JetBrains_Mono({
+    subsets: ["latin"],
     display: "swap",
 });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-        <html className={`bg-bg`} lang="en">
-            <body className={clsx(satoshi.className, "font-sans text-slate-200 ")}>
+        <html className={`bg-white`} lang="en">
+            <body className={clsx(jbMono.className, "text-black ")}>
                 {children}
                 <Analytics />
             </body>
