@@ -20,16 +20,9 @@ const satoshi = localFont({
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html className={`bg-bg`} lang="en">
-            <body className={clsx(satoshi.className, "font-sans text-slate-200 mb-8 ")}>
-                <div className="flex justify-center w-full">
-                    <div className="md:max-w-[75%] lg:max-w-[65%] px-4 md:px-6 lg:px-12 w-full">
-                        <div className="mt-6 mb-10">
-                            <Header />
-                        </div>
-                        {children}
-                        <Analytics />
-                    </div>
-                </div>
+            <body className={clsx(satoshi.className, "font-sans text-slate-200 ")}>
+                {children}
+                <Analytics />
             </body>
         </html>
     );

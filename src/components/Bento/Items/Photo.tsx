@@ -17,24 +17,25 @@ import NextImage, { StaticImageData } from "next/image";
 
 export default function PhotoBento() {
     return (
-        <a href="/photos" className="relative h-fit overflow-hidden">
-            <div className="flex justify-between  md:justify-normal md:gap-x-2 gap-x-0  items-center pb-2">
-                <div className="flex items-center gap-x-2">
-                    <IconCamera />
-                    <div className="text-xl font-bold">Photos</div>
+<>
+                <div className="flex justify-between  md:justify-normal md:gap-x-2 gap-x-0  items-center pb-2">
+                    <div className="flex items-center gap-x-2">
+                        <IconCamera />
+                        <div className="text-xl font-bold">Photos</div>
+                    </div>
+                    <div>
+                        <a href="/photos">
+                            <IconArrowRight className="text-custom-500" />
+                        </a>
+                    </div>
                 </div>
-                <div>
-                    <a href="/photos">
-                        <IconArrowRight className="text-custom-500" />
-                    </a>
+    
+                {/* <div>Photography is a passion of mine. I like to shoot just about anything!</div> */}
+                <div className="pt-2">
+                    <Photos />
                 </div>
-            </div>
-
-            {/* <div>Photography is a passion of mine. I like to shoot just about anything!</div> */}
-            <div className="pt-2">
-                <Photos />
-            </div>
-        </a>
+    
+</>
     );
 }
 
