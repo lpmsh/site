@@ -28,10 +28,18 @@ export default function Home() {
                 </div>
 
                 <div className="pt-8">
-                    I'm a co-founder of <a href="https://mergi.co" target="_blank" className="text-custom-500 hover:text-custom-600">Mergi</a>...
+                    I'm a co-founder of{" "}
+                    <a href="https://mergi.co" target="_blank" className="text-[#deb114] hover:text-opacity-70">
+                        Mergi
+                    </a>
+                    ...
                 </div>
                 <div className="pt-2">
-                    and I currently work at <a href="https://roda.com" target="_blank" className="text-custom-500 hover:text-custom-600">Roda</a>.
+                    and I currently work at{" "}
+                    <a href="https://roda.com" target="_blank" className="text-[#1E6CDC] hover:text-opacity-70">
+                        Roda
+                    </a>
+                    .
                 </div>
 
                 <div className="fixed bottom-8">
