@@ -5,10 +5,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/photos",
   },
-  title: {
-    default: "Photos | LPM",
-    template: "%s | LPM",
-  },
+  title: "Photos",
   description: "Liam Monaghan's Photo Gallery",
 };
 

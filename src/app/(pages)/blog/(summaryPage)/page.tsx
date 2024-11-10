@@ -9,10 +9,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/blog",
   },
-  title: {
-    default: "Blog | LPM",
-    template: "%s | LPM",
-  },
+  title: "Blog",
   description: "Liam Monaghan's Blog",
 };
 
