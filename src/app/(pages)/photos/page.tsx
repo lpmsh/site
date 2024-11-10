@@ -42,18 +42,6 @@ import image18 from "../(photos)/image18.jpg";
 import image18Scaled from "../(photos)/image18-scaled.jpg";
 import { useRef } from "react";
 import NextImage, { StaticImageData } from "next/image";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "/photos",
-  },
-  title: {
-    default: "Photos | LPM",
-    template: "%s | LPM",
-  },
-  description: "Liam Monaghan's Photo Gallery",
-};
 
 function useIsVisible(ref: any, scrollCounter: any) {
   const [isIntersecting, setIntersecting] = useState(false);

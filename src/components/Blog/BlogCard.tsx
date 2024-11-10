@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 import { getPostDate } from "@/sanity/utils/date";
 import { motion } from "framer-motion";
 
-function BlogCard({ title, _createdAt, icon, slug }: PostWithoutContent) {
+function BlogCard({ title, _createdAt, slug }: PostWithoutContent) {
     const { push } = useRouter();
     return (
         <motion.div
