@@ -42,14 +42,24 @@ import image18 from "../(photos)/image18.jpg";
 import image18Scaled from "../(photos)/image18-scaled.jpg";
 import { useRef } from "react";
 import NextImage, { StaticImageData } from "next/image";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/photos",
+  },
+  title: {
+    default: "Photos | LPM",
+    template: "%s | LPM",
+  },
+  description: "Liam Monaghan's Photo Gallery",
+};
 
 function useIsVisible(ref: any, scrollCounter: any) {
   const [isIntersecting, setIntersecting] = useState(false);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) =>
-      setIntersecting(entry.isIntersecting)
-    );
+    const observer = new IntersectionObserver(([entry]) => setIntersecting(entry.isIntersecting));
 
     observer.observe(ref.current);
     return () => {
@@ -60,12 +70,7 @@ function useIsVisible(ref: any, scrollCounter: any) {
   return isIntersecting;
 }
 
-const useProgressiveImg = (
-  lowQualitySrc: any,
-  highQualitySrc: any,
-  isVisible: any,
-  number: any
-) => {
+const useProgressiveImg = (lowQualitySrc: any, highQualitySrc: any, isVisible: any, number: any) => {
   const [src, setSrc] = useState(lowQualitySrc);
   useEffect(() => {
     setSrc(lowQualitySrc);
@@ -134,114 +139,24 @@ function Photos() {
   const image17Visible = useIsVisible(image17Ref, scrollCounter);
   const image18Visible = useIsVisible(image18Ref, scrollCounter);
 
-  const [image1Output, { image1Blur }] = useProgressiveImg(
-    image1Scaled,
-    image1,
-    image1Visible,
-    1
-  );
-  const [image2Output, { image2Blur }] = useProgressiveImg(
-    image2Scaled,
-    image2,
-    image2Visible,
-    2
-  );
-  const [image3Output, { image3Blur }] = useProgressiveImg(
-    image3Scaled,
-    image3,
-    image3Visible,
-    3
-  );
-  const [image4Output, { image4Blur }] = useProgressiveImg(
-    image4Scaled,
-    image4,
-    image4Visible,
-    4
-  );
-  const [image5Output, { image5Blur }] = useProgressiveImg(
-    image5Scaled,
-    image5,
-    image5Visible,
-    5
-  );
-  const [image6Output, { image6Blur }] = useProgressiveImg(
-    image6Scaled,
-    image6,
-    image6Visible,
-    6
-  );
-  const [image7Output, { image7Blur }] = useProgressiveImg(
-    image7Scaled,
-    image7,
-    image7Visible,
-    7
-  );
-  const [image8Output, { image8Blur }] = useProgressiveImg(
-    image8Scaled,
-    image8,
-    image8Visible,
-    8
-  );
-  const [image9Output, { image9Blur }] = useProgressiveImg(
-    image9Scaled,
-    image9,
-    image9Visible,
-    9
-  );
-  const [image10Output, { image10Blur }] = useProgressiveImg(
-    image10Scaled,
-    image10,
-    image10Visible,
-    10
-  );
-  const [image11Output, { image11Blur }] = useProgressiveImg(
-    image11Scaled,
-    image11,
-    image11Visible,
-    11
-  );
-  const [image12Output, { image12Blur }] = useProgressiveImg(
-    image12Scaled,
-    image12,
-    image12Visible,
-    12
-  );
-  const [image13Output, { image13Blur }] = useProgressiveImg(
-    image13Scaled,
-    image13,
-    image13Visible,
-    13
-  );
-  const [image14Output, { image14Blur }] = useProgressiveImg(
-    image14Scaled,
-    image14,
-    image14Visible,
-    14
-  );
-  const [image15Output, { image15Blur }] = useProgressiveImg(
-    image15Scaled,
-    image15,
-    image15Visible,
-    15
-  );
-  const [image16Output, { image16Blur }] = useProgressiveImg(
-    image16Scaled,
-    image16,
-    image16Visible,
-    16
-  );
-  const [image17Output, { image17Blur }] = useProgressiveImg(
-    image17Scaled,
-    image17,
-    image17Visible,
-    17
-  );
-  const [image18Output, { image18Blur }] = useProgressiveImg(
-    image18Scaled,
-    image18,
-    image18Visible,
-    18
-  );
+  const [image1Output, { image1Blur }] = useProgressiveImg(image1Scaled, image1, image1Visible, 1);
+  const [image2Output, { image2Blur }] = useProgressiveImg(image2Scaled, image2, image2Visible, 2);
+  const [image3Output, { image3Blur }] = useProgressiveImg(image3Scaled, image3, image3Visible, 3);
+  const [image4Output, { image4Blur }] = useProgressiveImg(image4Scaled, image4, image4Visible, 4);
+  const [image5Output, { image5Blur }] = useProgressiveImg(image5Scaled, image5, image5Visible, 5);
+  const [image6Output, { image6Blur }] = useProgressiveImg(image6Scaled, image6, image6Visible, 6);
+  const [image7Output, { image7Blur }] = useProgressiveImg(image7Scaled, image7, image7Visible, 7);
+  const [image8Output, { image8Blur }] = useProgressiveImg(image8Scaled, image8, image8Visible, 8);
+  const [image9Output, { image9Blur }] = useProgressiveImg(image9Scaled, image9, image9Visible, 9);
+  const [image10Output, { image10Blur }] = useProgressiveImg(image10Scaled, image10, image10Visible, 10);
+  const [image11Output, { image11Blur }] = useProgressiveImg(image11Scaled, image11, image11Visible, 11);
+  const [image12Output, { image12Blur }] = useProgressiveImg(image12Scaled, image12, image12Visible, 12);
+  const [image13Output, { image13Blur }] = useProgressiveImg(image13Scaled, image13, image13Visible, 13);
+  const [image14Output, { image14Blur }] = useProgressiveImg(image14Scaled, image14, image14Visible, 14);
+  const [image15Output, { image15Blur }] = useProgressiveImg(image15Scaled, image15, image15Visible, 15);
+  const [image16Output, { image16Blur }] = useProgressiveImg(image16Scaled, image16, image16Visible, 16);
+  const [image17Output, { image17Blur }] = useProgressiveImg(image17Scaled, image17, image17Visible, 17);
+  const [image18Output, { image18Blur }] = useProgressiveImg(image18Scaled, image18, image18Visible, 18);
 
   interface ImageData {
     ref: any;
@@ -362,46 +277,46 @@ function Photos() {
   ];
 
   return (
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
-          {images.map(({ visible, fullSrc, smallSrc, ref }, index) => (
-              <NextImage
-                  key={index}
-                  ref={ref}
-                  src={visible || index <= 3 ? fullSrc : smallSrc}
-                  // style={{ width: "100%", display: "block" }}
+    <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
+      {images.map(({ visible, fullSrc, smallSrc, ref }, index) => (
+        <NextImage
+          key={index}
+          ref={ref}
+          src={visible || index <= 3 ? fullSrc : smallSrc}
+          // style={{ width: "100%", display: "block" }}
 
-                  style={{
-                      width: "100%",
-                      display: "block",
-                      filter: index > 3 && !visible ? "blur(2px)" : "none",
-                      // transition: image1Blur ? "none" : "filter 0.3s ease-out",
-                  }}
-                  alt=""
-              />
-          ))}
-      </div>
+          style={{
+            width: "100%",
+            display: "block",
+            filter: index > 3 && !visible ? "blur(2px)" : "none",
+            // transition: image1Blur ? "none" : "filter 0.3s ease-out",
+          }}
+          alt=""
+        />
+      ))}
+    </div>
   );
 }
-      // <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
-      //   <Masonry>
-      //     {/* {renderPhotos} */}
-      //     {images.map(({ visible, fullSrc, smallSrc, ref }, index) => (
-      //       <NextImage
-      //         key={index}
-      //         ref={ref}
-      //         src={visible || index <= 3 ? fullSrc : smallSrc}
-      //         // style={{ width: "100%", display: "block" }}
+// <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
+//   <Masonry>
+//     {/* {renderPhotos} */}
+//     {images.map(({ visible, fullSrc, smallSrc, ref }, index) => (
+//       <NextImage
+//         key={index}
+//         ref={ref}
+//         src={visible || index <= 3 ? fullSrc : smallSrc}
+//         // style={{ width: "100%", display: "block" }}
 
-      //         style={{
-      //           width: "100%",
-      //           display: "block",
-      //           filter: index > 3 && !visible ? "blur(2px)" : "none",
-      //           // transition: image1Blur ? "none" : "filter 0.3s ease-out",
-      //         }}
-      //         alt=""
-      //       />
-      //     ))}
-      //   </Masonry>
-      // </ResponsiveMasonry>
+//         style={{
+//           width: "100%",
+//           display: "block",
+//           filter: index > 3 && !visible ? "blur(2px)" : "none",
+//           // transition: image1Blur ? "none" : "filter 0.3s ease-out",
+//         }}
+//         alt=""
+//       />
+//     ))}
+//   </Masonry>
+// </ResponsiveMasonry>
 
 export default Photos;
