@@ -43,7 +43,7 @@ export default function Home() {
         </div>
         <div className="pt-8">
           I also sell prints of my photos. You can get them{" "}
-          <a href="https://lpmvisuals.etsy.com" className="text-custom-500 hover:text-custom-600">
+          <a target="_blank" href="https://lpmvisuals.etsy.com" className="text-custom-500 hover:text-custom-600">
             here
           </a>
           .
