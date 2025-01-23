@@ -35,9 +35,13 @@ export default function Home() {
           ...
         </div>
         <div className="pt-2">
-          and I currently work at{" "}
-          <a href="https://roda.com" target="_blank" className="text-[#1E6CDC] hover:text-opacity-70">
-            Roda
+          and I'm hacking on{" "}
+          <a href="https://articlu.com?utm_source=lpmsh" target="_blank" className="text-[#cd678f] hover:text-opacity-70">
+            Articlu
+          </a>{" "}
+          and{" "}
+          <a href="https://myaicoverletter.com?utm_source=lpmsh" target="_blank" className="text-[#468671] hover:text-opacity-70">
+            My AI Cover Letter
           </a>
           .
         </div>
@@ -55,4 +59,5 @@ export default function Home() {
       </div>
     </div>
   );
+
 }
