@@ -1,0 +1,46 @@
+li {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+li li {
+  list-style-type: circle;
+  margin-left: 30px;
+}
+
+li li li {
+  list-style-type: square;
+  margin-left: 40px;
+}
+
+h1 {
+  @apply text-5xl pb-4 font-bold;
+}
+
+h2 {
+  @apply text-4xl pb-4 font-bold;
+}
+
+h3 {
+  @apply text-3xl pb-4 font-bold;
+}
+h4 {
+  @apply text-2xl pb-4 font-bold;
+}
+h5 {
+  @apply text-xl pb-4 font-bold;
+}
+h6 {
+  @apply text-lg pb-4 font-bold;
+}
+
+p:empty {
+  @apply py-2;
+}
+
+blockquote {
+  @apply p-4 my-4 bg-neutral-800 bg-opacity-70  border-neutral-700;
+}
+
+br {
+  @apply py-2
+}

@@ -1,4 +1,5 @@
 import SocialLinks from "@/components/Nav/SocialLinks";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -50,6 +51,13 @@ export default function Home() {
           <a target="_blank" href="https://lpmvisuals.etsy.com" className="text-custom-500 hover:text-custom-600">
             here
           </a>
+          .
+        </div>
+        <div className="pt-8">
+          Need a new website or have an idea for a project? You can check out my work and book a call{" "}
+          <Link className="text-custom-500 hover:text-custom-600" href={"/work"}>
+            here
+          </Link>
           .
         </div>
 
