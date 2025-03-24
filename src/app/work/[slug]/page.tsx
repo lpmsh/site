@@ -1,8 +1,8 @@
-import { getWorkPost, getWorkPostsWithoutContent } from "@/sanity/work";
+import { getWorkPost } from "@/sanity/work";
 import { IconArrowLeft, IconArrowUpRight } from "@tabler/icons-react";
 import { Carousel } from "@/components/Carousel";
 import Link from "next/link";
-import Button from "@/components/Button";
+import { Button } from "@/components/ui/button";
 import { PortableTextWrapper } from "@/sanity/utils/PortableTextWrapper";
 
 export default async function WorkPage({ params: { slug } }: { params: { slug: string } }) {
@@ -19,9 +19,11 @@ export default async function WorkPage({ params: { slug } }: { params: { slug: s
               </Link>
               <div className="text-4xl">{workPost.title}</div>
             </div>
-            <Button target="_blank" href={workPost.link} className="flex gap-x-2 items-center">
-              Check it out <IconArrowUpRight size={20} />
-            </Button>
+            <Link target="_blank" href={workPost.link}>
+              <Button className="flex gap-x-2 items-center bg-custom-500 hover:bg-custom-600">
+                Check it out <IconArrowUpRight size={20} />
+              </Button>
+            </Link>
           </div>
         </div>
         <div className="h-[300px] w-full">

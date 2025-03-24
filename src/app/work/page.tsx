@@ -1,7 +1,8 @@
 import { getWorkPostsWithoutContent } from "@/sanity/work";
 import { IconArrowLeft } from "@tabler/icons-react";
 import { Carousel } from "@/components/Carousel";
-import Button from "@/components/Button";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default async function WorkPage() {
   const workPosts = await getWorkPostsWithoutContent();
@@ -22,10 +23,12 @@ export default async function WorkPage() {
           <br />
           I'd love to work on your project!
           <div className="py-6 flex gap-x-2 items-center">
-            <Button href="https://cal.com/liammonaghan/30min" target="_blank" className="bg-neutral-800 hover:bg-neutral-900">
-              Book a Call
-            </Button>
-            <Button href="mailto:hello@lpm.sh">Email Me</Button>
+            <Link href="mailto:hello@lpm.sh">
+              <Button variant={"ghost"}>Email Me</Button>
+            </Link>
+            <Link href="https://cal.com/liammonaghan/30min" target="_blank">
+              <Button className="bg-custom-500 hover:bg-custom-600">Book a Call</Button>
+            </Link>
           </div>
         </div>
       </div>
