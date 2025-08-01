@@ -29,32 +29,24 @@ export default function Home() {
         </div>
 
         <div className="pt-8">
-          I'm a co-founder of{" "}
-          <a href="https://mergi.co" target="_blank" className="text-[#deb114] hover:text-opacity-70">
-            Mergi
-          </a>
-          ...
-        </div>
-        <div className="pt-2">
-          and I'm hacking on{" "}
-          <a href="https://articlu.com?utm_source=lpmsh" target="_blank" className="text-[#cd678f] hover:text-opacity-70">
-            Articlu
-          </a>{" "}
-          and{" "}
-          <a href="https://myaicoverletter.com?utm_source=lpmsh" target="_blank" className="text-[#468671] hover:text-opacity-70">
-            My AI Cover Letter
+          I'm currently hacking on{" "}
+          <a href="https://promptiac.com?utm_source=lpmsh" target="_blank" className="text-blue-500 hover:text-opacity-70">
+            Promptiac
           </a>
           .
         </div>
+
         <div className="pt-8">
-          I also sell prints of my photos. You can get them{" "}
-          <a target="_blank" href="https://lpmvisuals.etsy.com" className="text-custom-500 hover:text-custom-600">
-            here
+          And I'm an incoming CS student at{" "}
+          <a href="https://purdue.edu" target="_blank" className="text-[#CFB991] hover:text-opacity-70">
+            Purdue
           </a>
           .
         </div>
+
+        
         <div className="pt-8">
-          Need a new website or have an idea for a project? You can check out my work and book a call{" "}
+          Need a project built? You can check out my work and book a call{" "}
           <Link className="text-custom-500 hover:text-custom-600" href={"/work"}>
             here
           </Link>
@@ -67,5 +59,4 @@ export default function Home() {
       </div>
     </div>
   );
-
 }
