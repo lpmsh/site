@@ -37,7 +37,7 @@ export default function Home() {
         </div>
 
         <div className="pt-8">
-          And I'm an incoming CS student at{" "}
+          And I'm a CS student at{" "}
           <a href="https://purdue.edu" target="_blank" className="text-[#CFB991] hover:text-opacity-70">
             Purdue
           </a>
