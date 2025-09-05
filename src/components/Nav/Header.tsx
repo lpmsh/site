@@ -30,7 +30,7 @@
 // }
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { IconArrowRight, IconForms, IconPlus } from "@tabler/icons-react";
 import SocialLinks from "./SocialLinks";
 

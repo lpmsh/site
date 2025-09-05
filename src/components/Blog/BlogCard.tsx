@@ -7,7 +7,7 @@ import { SanityImageComponent } from "@/sanity/utils/SanityImageComponent";
 import Card from "../Card";
 import { useRouter } from "next/navigation";
 import { getPostDate } from "@/sanity/utils/date";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 function BlogCard({ title, _createdAt, slug }: PostWithoutContent) {
     const { push } = useRouter();
