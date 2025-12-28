@@ -29,7 +29,7 @@ export default async function BlogSlug({ params }: { params: { slug: string } })
         <h1 className="mb-4 text-center text-2xl">
           <BlogHeader {...post} />
         </h1>
-        <div dangerouslySetInnerHTML={{ __html: post.html_content }}></div>
+        <div dangerouslySetInnerHTML={{ __html: post.html_content }} className="content"></div>
       </div>
     </>
   );
