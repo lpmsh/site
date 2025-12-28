@@ -28,27 +28,26 @@ export default function Home() {
           .
         </div>
 
-        <div className="pt-8">
+        {/*<div className="pt-8">
           I'm currently hacking on{" "}
           <a href="https://promptiac.com?utm_source=lpmsh" target="_blank" className="text-blue-500 hover:text-opacity-70">
             Promptiac
           </a>
           .
-        </div>
+        </div>*/}
 
         <div className="pt-8">
-          And I'm a CS student at{" "}
+          I'm currently studying computer science at{" "}
           <a href="https://purdue.edu" target="_blank" className="text-[#CFB991] hover:text-opacity-70">
             Purdue
           </a>
           .
         </div>
 
-        
         <div className="pt-8">
-          Need a project built? You can check out my work and book a call{" "}
-          <Link className="text-custom-500 hover:text-custom-600" href={"/work"}>
-            here
+          Wanna chat?{" "}
+          <Link className="text-custom-500 hover:text-custom-600" target="_blank" href={"https://cal.com/liammonaghan/30min"}>
+            Book a call
           </Link>
           .
         </div>

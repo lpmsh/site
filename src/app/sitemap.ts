@@ -1,9 +1,10 @@
-import { getPosts } from "@/sanity/post";
+import { zenblog } from "@/lib/zenblog";
 
 async function getBlogSlugs() {
-  const posts = await getPosts();
+  // TODO paginated requests
+  const posts = await zenblog.posts.list();
 
-  return posts.map((p) => p.slug);
+  return posts.data.map((p) => p.slug);
 }
 
 export default async function sitemap() {

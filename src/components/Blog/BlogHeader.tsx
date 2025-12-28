@@ -1,4 +1,3 @@
-"use client";;
 import * as ReadingTime from "reading-time";
 import { load } from "cheerio";
 import { PostWithContent } from "zenblog/dist/types";

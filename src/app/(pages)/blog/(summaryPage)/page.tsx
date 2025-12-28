@@ -27,7 +27,12 @@ export default async function Blog() {
                   const aDate = new Date(a.published_at);
                   const bDate = new Date(b.published_at);
 
-                  return aDate > bDate ? -1 : 1;
+                  if (aDate < bDate) {
+                    return 1;
+                  } else if (aDate > bDate) {
+                    return -1;
+                  }
+                  return 0;
                 })
                 .map((post) => (
                   <BlogCard {...post} />
