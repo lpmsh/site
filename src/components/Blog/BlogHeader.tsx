@@ -1,18 +1,10 @@
-"use client";
-
-import * as React from "react";
+"use client";;
 import * as ReadingTime from "reading-time";
-import A from "../Anchor";
-import { SanityImageComponent } from "@/sanity/utils/SanityImageComponent";
-import { useRouter } from "next/navigation";
+import { load } from "cheerio";
+import { PostWithContent } from "zenblog/dist/types";
 
-interface BlogHeaderProps {
-  title: string;
-  text: string;
-}
-
-function BlogHeader({ title, text }: BlogHeaderProps) {
-  const readTime = ReadingTime.default(text);
+function BlogHeader({ title, html_content }: PostWithContent) {
+  const readTime = ReadingTime.default(load(html_content).text());
 
   return (
     <div className="w-full flex flex-col sm:flex-row sm:justify-between items-start sm:items-center">

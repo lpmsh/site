@@ -1,32 +1,35 @@
 import BlogHeader from "@/components/Blog/BlogHeader";
-import { getPost } from "@/sanity/post";
-import { PortableTextWrapper } from "@/sanity/utils/PortableTextWrapper";
-import { toPlainText } from "@portabletext/react";
-// import "./blogcontent.css";
 import { Metadata } from "next";
+import { zenblog } from "@/lib/zenblog";
+import "./blogcontent.css";
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const post = await getPost(params.slug);
+  const { data: post } = await zenblog.posts.get({
+    slug: params.slug,
+  });
 
   return {
     title: post.title,
     alternates: {
       canonical: `/blog${post.slug}`,
     },
-    description: post.blurb,
-    keywords: ["expo", "google oauth", "ios", "react native"],
+    description: post.excerpt,
+    keywords: post.tags.map((t) => t.name),
   } satisfies Metadata;
 }
 
 export default async function BlogSlug({ params }: { params: { slug: string } }) {
-  const post = await getPost(params.slug);
+  const { data: post } = await zenblog.posts.get({
+    slug: params.slug,
+  });
+
   return (
     <>
       <div className="pb-8 prose">
         <h1 className="mb-4 text-center text-2xl">
-          <BlogHeader title={post.title} text={toPlainText(post.content)} />
+          <BlogHeader {...post} />
         </h1>
-        <PortableTextWrapper content={post.content} />
+        <div dangerouslySetInnerHTML={{ __html: post.html_content }}></div>
       </div>
     </>
   );

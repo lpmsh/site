@@ -1,15 +1,9 @@
-"use client";
-
-import * as React from "react";
-import { getHumanDateFromSlashDate } from "@/utils/DateUtils";
-import { PostWithoutContent } from "@/sanity/post";
-import { SanityImageComponent } from "@/sanity/utils/SanityImageComponent";
-import Card from "../Card";
+"use client";;
 import { useRouter } from "next/navigation";
-import { getPostDate } from "@/sanity/utils/date";
 import { motion } from "motion/react";
+import { Post } from "zenblog/dist/types";
 
-function BlogCard({ title, _createdAt, slug }: PostWithoutContent) {
+function BlogCard({ title, published_at, slug }: Post) {
     const { push } = useRouter();
     return (
         <motion.div
@@ -25,7 +19,7 @@ function BlogCard({ title, _createdAt, slug }: PostWithoutContent) {
         >
             <div className=" flex justify-between items-center w-full">
                 <div className=" flex gap-x-2 items-center">{title}</div>
-                <span className="text-neutral-400">{getPostDate(_createdAt).toLocaleDateString() + "\t"}</span>
+                <span className="text-neutral-400">{new Date(published_at).toLocaleDateString() + "\t"}</span>
             </div>
         </motion.div>
     );
