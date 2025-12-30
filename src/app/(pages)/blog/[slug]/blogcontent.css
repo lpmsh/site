@@ -1,8 +1,0 @@
-.content {
-  img {
-    @apply w-full;
-  }
-  pre:has(code) {
-    @apply bg-neutral-800;
-  }
-}

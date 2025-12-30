@@ -2,6 +2,10 @@
 
 @plugin '@tailwindcss/typography';
 
+.prose-pre, .prose-code {
+    @apply bg-neutral-800
+}
+
 
 @theme {
   --font-sans: Satoshi, sans-serif;

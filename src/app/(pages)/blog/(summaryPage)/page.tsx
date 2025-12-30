@@ -35,7 +35,7 @@ export default async function Blog() {
                   return 0;
                 })
                 .map((post) => (
-                  <BlogCard {...post} />
+                  <BlogCard key={post.title} {...post} />
                 ))}
             </>
           ) : (

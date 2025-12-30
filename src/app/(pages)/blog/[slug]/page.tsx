@@ -1,11 +1,11 @@
 import BlogHeader from "@/components/Blog/BlogHeader";
 import { Metadata } from "next";
 import { zenblog } from "@/lib/zenblog";
-import "./blogcontent.css";
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const { data: post } = await zenblog.posts.get({
-    slug: params.slug,
+    slug,
   });
 
   return {
@@ -18,14 +18,15 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   } satisfies Metadata;
 }
 
-export default async function BlogSlug({ params }: { params: { slug: string } }) {
+export default async function BlogSlug({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const { data: post } = await zenblog.posts.get({
-    slug: params.slug,
+    slug,
   });
 
   return (
     <>
-      <div className="pb-8 prose">
+      <div className="pb-8 prose prose-neutral">
         <h1 className="mb-4 text-center text-2xl">
           <BlogHeader {...post} />
         </h1>
