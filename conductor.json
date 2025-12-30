@@ -1,5 +1,5 @@
 {
     "scripts": {
-        "setup": "./conductor-setup.sh"
+        "setup": "bun install; cp $CONDUCTOR_ROOT_PATH/.env .env"
     }
 }
