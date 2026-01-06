@@ -18,7 +18,7 @@ export default function Home() {
             photographer
           </a>
           , Pittsburgh and Ohio State sports fan, and can't live without music. You can usually find me{" "}
-          <a href="https://github.com/slyguy5646" target="_blank" className="text-custom-500 hover:text-custom-600">
+          <a href="https://github.com/lpmsh" target="_blank" className="text-custom-500 hover:text-custom-600">
             coding
           </a>{" "}
           or hanging out with friends. I also occasionally{" "}

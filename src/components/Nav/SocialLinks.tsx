@@ -7,7 +7,7 @@ export default function SocialLinks() {
     <div className="rounded-xl flex items-center gap-x-2 w-fit">
       <a
         className="text-custom-500 transition duration-300 delay-75 ease-in-out hover:text-neutral-600"
-        href="https://github.com/slyguy5646"
+        href="https://github.com/lpmsh"
         target="_blank"
       >
         <IconBrandGithub className="sm:w-6 w-8 sm:h-6 h-8" />
