@@ -19,7 +19,7 @@
 
   --color-bg: #111111;
 
-  --color-custom-50: #fff6eb;
+  /*--color-custom-50: #fff6eb;
   --color-custom-100: #ffebd1;
   --color-custom-200: #ffd2a1;
   --color-custom-300: #ffb066;
@@ -29,7 +29,23 @@
   --color-custom-700: #d52b00;
   --color-custom-800: #ad2304;
   --color-custom-900: #871f07;
-  --color-custom-950: #490b01;
+  --color-custom-950: #490b01;*/
+  
+  --color-custom-50: #f2f7f2;
+  --color-custom-100: #e2ebe0;
+  --color-custom-200: #c4d8c2;
+  --color-custom-300: #9bbc99;
+  --color-custom-400: #608a5f;
+  --color-custom-500: #4c7d4d;
+  --color-custom-600: #39623a;
+  --color-custom-700: #2d4f2f;
+  --color-custom-800: #263f28;
+  --color-custom-900: #203422;
+  --color-custom-950: #111d12;
+  
+
+  
+
 
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));

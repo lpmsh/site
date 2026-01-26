@@ -14,15 +14,15 @@ export default function Home() {
 
         <div className="pt-8">
           I&apos;m a Christian, student, developer,{" "}
-          <a href="/photos" className="text-custom-500 hover:text-custom-600">
+          <a href="/photos" className="text-neutral-500 hover:text-neutral-600 underline">
             photographer
           </a>
           , Pittsburgh and Ohio State sports fan, and can't live without music. You can usually find me{" "}
-          <a href="https://github.com/lpmsh" target="_blank" className="text-custom-500 hover:text-custom-600">
+          <a href="https://github.com/lpmsh" target="_blank" className="text-neutral-500 hover:text-neutral-600 underline">
             coding
           </a>{" "}
           or hanging out with friends. I also occasionally{" "}
-          <a href="/blog" className="text-custom-500 hover:text-custom-600">
+          <a href="/blog" className="text-neutral-500 hover:text-neutral-600 underline">
             write about things
           </a>
           .
@@ -37,8 +37,15 @@ export default function Home() {
         </div>*/}
 
         <div className="pt-8">
-          I'm currently studying computer science at{" "}
-          <a href="https://purdue.edu" target="_blank" className="text-[#CFB991] hover:text-opacity-70">
+          I'm currently a software engineer intern for{" "}
+          <a href="https://flowglad.com" target="_blank" className="text-[#DD7D2A] hover:text-opacity-70 underline">
+            Flowglad
+          </a>
+        </div>
+
+        <div className="pt-2">
+          and studying computer science at{" "}
+          <a href="https://purdue.edu" target="_blank" className="text-[#CFB991] hover:text-opacity-70 underline">
             Purdue
           </a>
           .
@@ -46,7 +53,7 @@ export default function Home() {
 
         <div className="pt-8">
           Wanna chat?{" "}
-          <Link className="text-custom-500 hover:text-custom-600" target="_blank" href={"https://cal.com/liammonaghan/30min"}>
+          <Link className="text-neutral-500 hover:text-neutral-600 underline" target="_blank" href={"https://cal.com/liammonaghan/30min"}>
             Book a call
           </Link>
           .

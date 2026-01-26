@@ -1,5 +1,5 @@
 import "./globals.css";
-import { JetBrains_Mono } from "next/font/google";
+import { Playfair_Display } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 
 import { Header } from "@/components/Nav/Header";
@@ -7,11 +7,7 @@ import clsx from "clsx";
 import { Metadata } from "next";
 import localFont from 'next/font/local'
  
-// Font files can be colocated inside of `app`
-const sfPro = localFont({
-  src: '../assets/sfpro.otf',
-  display: 'swap',
-})
+
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://lpm.sh"),
@@ -25,7 +21,7 @@ export const metadata: Metadata = {
   description: "Student, Developer, and Photographer",
 };
 
-const jbMono = JetBrains_Mono({
+const jbMono = Playfair_Display({
   subsets: ["latin"],
   display: "swap",
 });
