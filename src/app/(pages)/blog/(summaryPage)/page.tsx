@@ -13,7 +13,9 @@ export const metadata: Metadata = {
 
 export default async function Blog() {
   // TODO add paginated query
-  const posts = await zenblog.posts.list();
+  const posts = await zenblog.posts.list({
+    "limit": 100
+  });
 
   return (
     <div className="flex w-full justify-center">
