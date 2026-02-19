@@ -1,5 +1,5 @@
 import "./globals.css";
-import { Playfair_Display } from "next/font/google";
+import { Noto_Serif } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 
 import { Header } from "@/components/Nav/Header";
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   description: "Student, Developer, and Photographer",
 };
 
-const jbMono = Playfair_Display({
+const jbMono = Noto_Serif({
   subsets: ["latin"],
   display: "swap",
 });

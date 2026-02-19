@@ -37,16 +37,20 @@ export default function Home() {
         </div>*/}
 
         <div className="pt-8">
-          I'm currently a software engineer intern for{" "}
-          <a href="https://flowglad.com" target="_blank" className="text-[#DD7D2A] hover:text-opacity-70 underline">
-            Flowglad
-          </a>
-        </div>
-
-        <div className="pt-2">
-          and studying computer science at{" "}
+          I'm currently studying computer science at{" "}
           <a href="https://purdue.edu" target="_blank" className="text-[#CFB991] hover:text-opacity-70 underline">
             Purdue
+          </a>
+          .
+        </div>
+        <div className="pt-2">
+          I was previously a software engineer intern for{" "}
+          <a href="https://flowglad.com" target="_blank" className="text-[#DD7D2A] hover:text-opacity-70 underline">
+            Flowglad
+          </a>{" "}
+          and{" "}
+          <a href="https://flowglad.com" target="_blank" className="text-[#1D6CDC] hover:text-opacity-70 underline">
+            Roda
           </a>
           .
         </div>
