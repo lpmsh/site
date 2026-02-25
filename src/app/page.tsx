@@ -49,7 +49,7 @@ export default function Home() {
             Flowglad
           </a>{" "}
           and{" "}
-          <a href="https://flowglad.com" target="_blank" className="text-[#1D6CDC] hover:text-opacity-70 underline">
+          <a href="https://roda.com" target="_blank" className="text-[#1D6CDC] hover:text-opacity-70 underline">
             Roda
           </a>
           .
