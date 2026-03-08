@@ -13,17 +13,17 @@ export default function Home() {
         </div>
 
         <div className="pt-8">
-          I&apos;m a Christian, student, developer,{" "}
+          Christian, developer,{" "}
           <a href="/photos" className="text-neutral-500 hover:text-neutral-600 underline">
             photographer
           </a>
-          , Pittsburgh and Ohio State sports fan, and can't live without music. You can usually find me{" "}
+          , and sports fan. Usually{" "}
           <a href="https://github.com/lpmsh" target="_blank" className="text-neutral-500 hover:text-neutral-600 underline">
             coding
-          </a>{" "}
-          or hanging out with friends. I also occasionally{" "}
+          </a>
+          {" "}or with friends. Sometimes I{" "}
           <a href="/blog" className="text-neutral-500 hover:text-neutral-600 underline">
-            write about things
+            write
           </a>
           .
         </div>
@@ -37,14 +37,11 @@ export default function Home() {
         </div>*/}
 
         <div className="pt-8">
-          I'm currently studying computer science at{" "}
+          CS at{" "}
           <a href="https://purdue.edu" target="_blank" className="text-[#CFB991] hover:text-opacity-70 underline">
             Purdue
           </a>
-          .
-        </div>
-        <div className="pt-2">
-          I was previously a software engineer intern for{" "}
+          . Previously interned at{" "}
           <a href="https://flowglad.com" target="_blank" className="text-[#DD7D2A] hover:text-opacity-70 underline">
             Flowglad
           </a>{" "}
