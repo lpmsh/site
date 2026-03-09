@@ -192,3 +192,45 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Retro CRT styles */
+.retro-crt {
+  position: relative;
+  overflow: hidden;
+}
+
+.retro-crt::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(0, 40, 0, 0.15) 0%, rgba(0, 0, 0, 0.6) 100%);
+  pointer-events: none;
+  z-index: 20;
+}
+
+.retro-scanlines {
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15) 0px,
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  pointer-events: none;
+  z-index: 20;
+}
+
+.retro-text {
+  text-shadow: 0 0 8px rgba(74, 222, 128, 0.4);
+}
+
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.retro-blink {
+  animation: blink 1s step-end infinite;
+}
