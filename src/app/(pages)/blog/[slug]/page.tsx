@@ -26,11 +26,14 @@ export default async function BlogSlug({ params }: { params: Promise<{ slug: str
 
   return (
     <>
-      <div className="pb-8 prose prose-neutral">
-        <h1 className="mb-4 text-center text-2xl">
+      <div className="pb-8 prose prose-neutral font-mono retro-scanlines">
+        <div className="mb-6">
           <BlogHeader {...post} />
-        </h1>
-        <div dangerouslySetInnerHTML={{ __html: post.html_content }} className="content"></div>
+        </div>
+        <div dangerouslySetInnerHTML={{ __html: post.html_content }} className="content retro-prose"></div>
+        <div className="text-custom-900 text-xs mt-8 font-mono not-prose">
+          {">"} EOF_<span className="retro-blink">▌</span>
+        </div>
       </div>
     </>
   );

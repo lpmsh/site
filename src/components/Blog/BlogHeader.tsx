@@ -6,9 +6,20 @@ function BlogHeader({ title, html_content }: PostWithContent) {
   const readTime = ReadingTime.default(load(html_content).text());
 
   return (
-    <div className="w-full flex flex-col sm:flex-row sm:justify-between items-start sm:items-center">
-      <div className="text-2xl font-extrabold text-center sm:text-left md:text-right sm:max-w-[75%] md:max-w-[85%]">{title}</div>
-      <div className="font-light text-lg">{Math.round(readTime.minutes)} min read</div>
+    <div className="w-full font-mono">
+      <div className="text-custom-400 text-xs mb-4 whitespace-pre">
+{`┌─── POST ───────────────────────────┐`}
+      </div>
+      <div className="text-2xl font-bold text-left text-neutral-100">
+        {">"} {title}
+      </div>
+      <div className="flex gap-x-4 mt-2 text-xs text-custom-700">
+        <span>[ {Math.round(readTime.minutes)} min read ]</span>
+        <span>[ {readTime.words} words ]</span>
+      </div>
+      <div className="text-custom-400 text-xs mt-4 whitespace-pre">
+{`└────────────────────────────────────┘`}
+      </div>
     </div>
   );
 }

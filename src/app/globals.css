@@ -192,3 +192,72 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Retro blog styles */
+.retro-scanlines {
+  position: relative;
+}
+
+.retro-scanlines::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.08) 2px,
+    rgba(0, 0, 0, 0.08) 4px
+  );
+  pointer-events: none;
+}
+
+@keyframes retro-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.retro-blink {
+  animation: retro-blink 1s step-end infinite;
+  color: var(--color-custom-400);
+}
+
+.retro-prose {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+.retro-prose :is(h1, h2, h3, h4, h5, h6) {
+  color: var(--color-custom-400);
+  font-weight: 700;
+}
+
+.retro-prose :is(h1, h2, h3, h4, h5, h6)::before {
+  content: "# ";
+  color: var(--color-custom-700);
+}
+
+.retro-prose a {
+  color: var(--color-custom-400);
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  text-underline-offset: 3px;
+}
+
+.retro-prose a:hover {
+  color: var(--color-custom-300);
+}
+
+.retro-prose blockquote {
+  border-left-color: var(--color-custom-700);
+  color: var(--color-custom-500);
+  font-style: normal;
+}
+
+.retro-prose code {
+  color: var(--color-custom-300);
+}
+
+.retro-prose hr {
+  border-color: var(--color-custom-900);
+  border-style: dashed;
+}

@@ -18,10 +18,20 @@ export default async function Blog() {
   });
 
   return (
-    <div className="flex w-full justify-center">
+    <div className="flex w-full justify-center font-mono">
       <div className="flex flex-col items-center w-full">
-        <div className="text-4xl font-bold text-left w-full">Blog</div>
-        <div className=" py-6  flex flex-col gap-y-4 w-full ">
+        <div className="w-full text-custom-400 text-sm whitespace-pre">
+{`
+ ┌──────────────────────────────────┐
+ │  > BLOG_                         │
+ │  Loading entries...              │
+ └──────────────────────────────────┘`}
+        </div>
+        <div className="py-4 flex flex-col w-full border border-custom-900 retro-scanlines">
+          <div className="px-3 py-1 text-xs text-custom-500 border-b border-custom-900 flex justify-between">
+            <span>{"// entries"}</span>
+            <span>{posts.data.length} records found</span>
+          </div>
           {posts.data.length != 0 ? (
             <>
               {posts.data
@@ -36,13 +46,16 @@ export default async function Blog() {
                   }
                   return 0;
                 })
-                .map((post) => (
-                  <BlogCard key={post.title} {...post} />
+                .map((post, i) => (
+                  <BlogCard key={post.title} {...post} index={i} />
                 ))}
             </>
           ) : (
             <ItsEmpty />
           )}
+        </div>
+        <div className="w-full text-custom-900 text-xs mt-2 font-mono">
+          {">"} end of transmission_<span className="retro-blink">▌</span>
         </div>
       </div>
     </div>
