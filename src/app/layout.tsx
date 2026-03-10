@@ -27,7 +27,7 @@ const jbMono = Noto_Serif({
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html className={`bg-white`} lang="en">
+    <html className={`bg-red-500`} lang="en">
       <body className={clsx(jbMono.className, "text-black ")}>
         <NavigationProvider>{children}</NavigationProvider>
         <Analytics />
