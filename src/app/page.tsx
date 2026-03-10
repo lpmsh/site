@@ -2,6 +2,20 @@ import SocialLinks from "@/components/Nav/SocialLinks";
 import Greeting from "@/components/Greeting";
 import Link from "next/link";
 
+const interests = [
+  "distributed systems",
+  "film photography",
+  "type-safe APIs",
+  "generative art",
+  "running",
+  "mechanical keyboards",
+];
+
+function CurrentInterest() {
+  const index = Math.floor(Date.now() / 86400000) % interests.length;
+  return <span className="text-neutral-400">{interests[index]}</span>;
+}
+
 export default function Home() {
   return (
     <div className="w-full flex justify-center ">
@@ -47,6 +61,11 @@ export default function Home() {
             chat
           </Link>
           .
+        </div>
+
+        <div className="pt-8 text-neutral-500 text-sm">
+          Currently into {" "}
+          <CurrentInterest />.
         </div>
 
         <div className="fixed bottom-8">
