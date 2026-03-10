@@ -1,4 +1,5 @@
 import SocialLinks from "@/components/Nav/SocialLinks";
+import Greeting from "@/components/Greeting";
 import Link from "next/link";
 
 export default function Home() {
@@ -6,7 +7,7 @@ export default function Home() {
     <div className="w-full flex justify-center ">
       <div className="sm:max-w-[70%] lg:w-[50%] sm:absolute sm:px-0 px-6 top-0 left-[96px] flex flex-col items-start pt-10 sm:pt-24 lg:border-red-500 md:border-yellow-500 sm:border-green-500">
         <div>
-          Liam Monaghan{" "}
+          <Greeting />{" "}
           <a className="mt-8" target="_blank" href="https://light.lpm.sh">
             💡
           </a>
