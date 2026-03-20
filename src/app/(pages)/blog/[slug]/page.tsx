@@ -26,7 +26,7 @@ export default async function BlogSlug({ params }: { params: Promise<{ slug: str
 
   return (
     <>
-      <div className="pb-8 prose prose-neutral">
+      <div className="pb-8 prose prose-neutral max-w-none w-full mx-auto">
         <h1 className="mb-4 text-center text-2xl">
           <BlogHeader {...post} />
         </h1>
