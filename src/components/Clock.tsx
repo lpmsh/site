@@ -3,11 +3,9 @@
 import { useEffect, useState } from "react";
 
 function getGreeting(hour: number) {
-  if (hour < 5) return "Good night";
   if (hour < 12) return "Good morning";
   if (hour < 17) return "Good afternoon";
-  if (hour < 21) return "Good evening";
-  return "Good night";
+  return "Good evening";
 }
 
 export default function Clock() {
