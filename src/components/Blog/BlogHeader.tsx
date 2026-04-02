@@ -7,8 +7,8 @@ function BlogHeader({ title, html_content }: PostWithContent) {
 
   return (
     <div className="w-full flex flex-col gap-1">
-      <div className="text-2xl font-extrabold">{title}</div>
-      <div className="font-light text-lg">{Math.round(readTime.minutes)} min read</div>
+      <div className="text-lg font-semibold">{title}</div>
+      <div className="font-light text-xs text-neutral-500">{Math.round(readTime.minutes)} min read</div>
     </div>
   );
 }
