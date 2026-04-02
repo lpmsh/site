@@ -1,5 +1,4 @@
 import SocialLinks from "@/components/Nav/SocialLinks";
-import Link from "next/link";
 
 export default function Home() {
   return (
@@ -55,13 +54,6 @@ export default function Home() {
           .
         </div>
 
-        <div className="pt-8">
-          Wanna chat?{" "}
-          <Link className="text-neutral-500 hover:text-neutral-600 underline" target="_blank" href={"https://cal.com/liammonaghan/30min"}>
-            Book a call
-          </Link>
-          .
-        </div>
 
         <div className="fixed bottom-8">
           <SocialLinks />
