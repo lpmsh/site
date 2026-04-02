@@ -23,7 +23,7 @@ export default function Clock() {
   const formatted = time.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
 
   return (
-    <div className="fixed bottom-8 right-8 text-xs text-neutral-300">
+    <div className="fixed bottom-8 sm:right-[96px] right-6 text-xs text-neutral-300">
       {greeting}, it&apos;s {formatted}
     </div>
   );
