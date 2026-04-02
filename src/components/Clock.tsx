@@ -24,7 +24,7 @@ export default function Clock() {
 
   return (
     <div className="fixed bottom-8 right-8 text-xs text-neutral-300">
-      {greeting} — {formatted}
+      {greeting}, it&apos;s {formatted}
     </div>
   );
 }
