@@ -1,4 +1,5 @@
 import SocialLinks from "@/components/Nav/SocialLinks";
+import Clock from "@/components/Clock";
 
 export default function Home() {
   return (
@@ -58,6 +59,7 @@ export default function Home() {
         <div className="fixed bottom-8">
           <SocialLinks />
         </div>
+        <Clock />
       </div>
     </div>
   );
