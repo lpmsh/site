@@ -3,6 +3,8 @@ import { zenblog } from "@/lib/zenblog";
 import ItsEmpty from "@/components/ItsEmpty";
 import { Metadata } from "next";
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   alternates: {
     canonical: "/blog",

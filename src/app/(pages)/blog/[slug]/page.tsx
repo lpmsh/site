@@ -2,6 +2,13 @@ import BlogHeader from "@/components/Blog/BlogHeader";
 import { Metadata } from "next";
 import { zenblog } from "@/lib/zenblog";
 
+export const revalidate = 3600;
+
+export async function generateStaticParams() {
+  const posts = await zenblog.posts.list({ limit: 100 });
+  return posts.data.map((post) => ({ slug: post.slug }));
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const { data: post } = await zenblog.posts.get({
