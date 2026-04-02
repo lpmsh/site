@@ -6,9 +6,9 @@ function BlogHeader({ title, html_content }: PostWithContent) {
   const readTime = ReadingTime.default(load(html_content).text());
 
   return (
-    <div className="w-full flex flex-col sm:flex-row sm:justify-between items-start sm:items-center">
-      <div className="text-2xl font-extrabold text-center sm:text-left md:text-right sm:max-w-[75%] md:max-w-[85%]">{title}</div>
-      <div className="font-light text-lg">{Math.round(readTime.minutes)} min read</div>
+    <div className="w-full flex flex-col gap-1">
+      <div className="text-lg font-semibold">{title}</div>
+      <div className="font-light text-xs text-neutral-500">{Math.round(readTime.minutes)} min read</div>
     </div>
   );
 }

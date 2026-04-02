@@ -1,12 +1,12 @@
 import "./globals.css";
-import { Noto_Serif } from "next/font/google";
+import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 
 import { Header } from "@/components/Nav/Header";
 import { NavigationProvider } from "@/components/Nav/NavigationProvider";
 import clsx from "clsx";
 import { Metadata } from "next";
-import localFont from "next/font/local";
+
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://lpm.sh"),
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   description: "Student, Developer, and Photographer",
 };
 
-const jbMono = Noto_Serif({
+const inter = Inter({
   subsets: ["latin"],
   display: "swap",
 });
@@ -28,7 +28,7 @@ const jbMono = Noto_Serif({
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html className={`bg-white`} lang="en">
-      <body className={clsx(jbMono.className, "text-black ")}>
+      <body className={clsx(inter.className, "text-black text-sm")}>
         <NavigationProvider>{children}</NavigationProvider>
         <Analytics />
       </body>

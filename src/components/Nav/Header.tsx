@@ -59,7 +59,7 @@ export function Header() {
                 className="w-full transform-none backdrop-blur-[36px] b-[#f0f0f052] bg-neutral-800 shadow-[2px_4px_20px_#0000000a] overflow-hidden  z-10 my-0 rounded-2xl top-4 nav"
             >
                 <div className="flex justify-between items-center cursor-pointer">
-                    <a href="/" className=" px-4 text-3xl text-white font-black py-4" style={{ lineHeight: 0 }}>
+                    <a href="/" className=" px-4 text-xl text-white font-black py-4" style={{ lineHeight: 0 }}>
                         LPM
                     </a>
                     <button onClick={() => setOpen(!open)} className="w-full py-4 px-4 flex justify-end">
@@ -79,7 +79,7 @@ export function Header() {
                     <div className="px-4 pt-2 pb-4 flex md:flex-row flex-col justify-between">
                         <div className="flex flex-col gap-y-2 pt-[6px]">
                             {navconfig.map((child) => (
-                                <a href={child.href} className="text-lg">
+                                <a href={child.href} className="text-sm">
                                     {child.title}
                                 </a>
                             ))}
