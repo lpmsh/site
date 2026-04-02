@@ -1,7 +1,7 @@
 import { GitHubLogoIcon, LinkedInLogoIcon, InstagramLogoIcon, TwitterLogoIcon } from "@radix-ui/react-icons";
 
 export default function SocialLinks() {
-  const iconClass = "w-3.5 h-3.5";
+  const iconClass = "w-4 h-4";
 
   return (
     <div className="flex items-center gap-x-3 w-fit">
