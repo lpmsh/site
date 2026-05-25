@@ -15,6 +15,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     slug,
   });
 
+  const images = post.cover_image ? [post.cover_image] : undefined;
+
   return {
     title: post.title,
     alternates: {
@@ -22,6 +24,17 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     },
     description: post.excerpt,
     keywords: post.tags.map((t) => t.name),
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      images,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      images,
+    },
   } satisfies Metadata;
 }
 
