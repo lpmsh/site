@@ -1,5 +1,6 @@
 {
     "scripts": {
-        "setup": "./conductor-setup.sh"
+        "setup": "./conductor-setup.sh",
+        "run": "bun run dev"
     }
 }

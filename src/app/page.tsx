@@ -1,6 +1,3 @@
-import SocialLinks from "@/components/Nav/SocialLinks";
-import Clock from "@/components/Clock";
-
 export default function Home() {
   return (
     <div className="w-full flex justify-center ">
@@ -55,11 +52,21 @@ export default function Home() {
           .
         </div>
 
-
-        <div className="fixed bottom-8">
-          <SocialLinks />
+        <div className="pt-8">
+          You can reach me on{" "}
+          <a href="https://twitter.com/lmon_25" target="_blank" className="text-neutral-500 hover:text-neutral-600 underline">
+            X
+          </a>{" "}
+          or email: monaghal [at] purdue [dot] edu. You can also find me on{" "}
+          <a href="https://www.linkedin.com/in/liampmonaghan/" target="_blank" className="text-neutral-500 hover:text-neutral-600 underline">
+            LinkedIn
+          </a>
+          {" or "}
+          <a href="https://instagram.com/lpm_visuals" target="_blank" className="text-neutral-500 hover:text-neutral-600 underline">
+            Instagram
+          </a>
+          .
         </div>
-        <Clock />
       </div>
     </div>
   );
