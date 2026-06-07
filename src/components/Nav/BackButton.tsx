@@ -1,18 +1,29 @@
 "use client";
 
 import { IconArrowLeft } from "@tabler/icons-react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useNavigation } from "./NavigationProvider";
+
+// The fallback destination when there is no in-app history to go back to:
+// the parent page one segment up (e.g. /blog/some-post -> /blog), or the root
+// for top-level pages (e.g. /blog -> /).
+function getParentPath(pathname: string): string {
+  const segments = pathname.split("/").filter(Boolean);
+  if (segments.length <= 1) return "/";
+  segments.pop();
+  return "/" + segments.join("/");
+}
 
 export function BackButton() {
   const router = useRouter();
+  const pathname = usePathname();
   const { hasInternalHistory } = useNavigation();
 
   const handleBack = () => {
     if (hasInternalHistory()) {
       router.back();
     } else {
-      router.push("/");
+      router.push(getParentPath(pathname));
     }
   };
 
