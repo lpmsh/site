@@ -37,11 +37,8 @@ export default function Home() {
           I'm currently working on developer relations at{" "}
           <a href="https://merge.dev" target="_blank" className="text-[#4117F4] hover:text-opacity-70 underline">
             Merge
-          </a>
-          .
-        </div>
-        <div className="pt-2">
-          I'm currently studying computer science at{" "}
+          </a>{" "}
+          and studying computer science at{" "}
           <a href="https://purdue.edu" target="_blank" className="text-[#CFB991] hover:text-opacity-70 underline">
             Purdue
           </a>
