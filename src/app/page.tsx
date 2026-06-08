@@ -61,7 +61,11 @@ export default function Home() {
           <a href="https://twitter.com/lmon_25" target="_blank" className="text-neutral-400 hover:text-neutral-500 underline">
             X
           </a>{" "}
-          or email: monaghal [at] purdue [dot] edu. You can also find me on{" "}
+          or{" "}
+          <a href="mailto:monaghal@purdue.edu" className="text-neutral-400 hover:text-neutral-500 underline">
+            email
+          </a>
+          . You can also find me on{" "}
           <a href="https://www.linkedin.com/in/liampmonaghan/" target="_blank" className="text-neutral-400 hover:text-neutral-500 underline">
             LinkedIn
           </a>
