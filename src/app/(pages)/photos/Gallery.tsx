@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 export type Photo = {
@@ -11,10 +11,43 @@ export type Photo = {
   alt?: string;
 };
 
+// Must match next.config.js `images.deviceSizes`.
+const DEVICE_SIZES = [640, 750, 828, 1080, 1200, 1920];
+
+// Reconstruct the optimized URL the lightbox will request for the current
+// viewport, so hovering a tile warms the exact same cache entry the click
+// will hit. Mirrors the lightbox <Image> `sizes` below.
+function lightboxSrc(url: string) {
+  const vw =
+    window.innerWidth >= 1024 ? 0.5 : window.innerWidth >= 640 ? 0.8 : 1;
+  const required = Math.ceil(
+    window.innerWidth * vw * (window.devicePixelRatio || 1),
+  );
+  const width =
+    DEVICE_SIZES.find((w) => w >= required) ??
+    DEVICE_SIZES[DEVICE_SIZES.length - 1];
+  return `/_next/image?url=${encodeURIComponent(url)}&w=${width}&q=75`;
+}
+
 export default function Gallery({ photos }: { photos: Photo[] }) {
   const [active, setActive] = useState<Photo | null>(null);
+  const [loaded, setLoaded] = useState(false);
+  const preloaded = useRef<Set<string>>(new Set());
 
   const close = useCallback(() => setActive(null), []);
+
+  // Warm the full-size image on intent (hover / press) so opening is instant.
+  const preload = useCallback((photo: Photo) => {
+    if (preloaded.current.has(photo.url)) return;
+    preloaded.current.add(photo.url);
+    const img = new window.Image();
+    img.src = lightboxSrc(photo.url);
+  }, []);
+
+  // Reset the load state each time a new photo opens.
+  useEffect(() => {
+    setLoaded(false);
+  }, [active]);
 
   // Close on Escape and lock body scroll while the lightbox is open.
   useEffect(() => {
@@ -42,11 +75,13 @@ export default function Gallery({ photos }: { photos: Photo[] }) {
   return (
     <>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
-        {photos.map((photo) => (
+        {photos.map((photo, index) => (
           <button
             key={photo.url}
             type="button"
             onClick={() => setActive(photo)}
+            onPointerEnter={() => preload(photo)}
+            onPointerDown={() => preload(photo)}
             aria-label="Open photo"
             className="relative block w-full aspect-[4/5] cursor-zoom-in"
           >
@@ -58,6 +93,9 @@ export default function Gallery({ photos }: { photos: Photo[] }) {
               alt={photo.alt ?? ""}
               sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
               className="object-cover"
+              // First row is above the fold — load it eagerly for a fast LCP;
+              // everything else stays lazy.
+              priority={index < 3}
             />
           </button>
         ))}
@@ -70,16 +108,23 @@ export default function Gallery({ photos }: { photos: Photo[] }) {
           aria-modal="true"
           className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8 cursor-zoom-out bg-black/60 backdrop-blur-md"
         >
+          {!loaded && (
+            <div
+              aria-hidden
+              className="absolute h-8 w-8 animate-spin rounded-full border-2 border-neutral-600 border-t-neutral-200"
+            />
+          )}
           <Image
             src={active.url}
             width={active.width}
             height={active.height}
-            placeholder="blur"
-            blurDataURL={active.blurDataURL}
             alt={active.alt ?? ""}
-            sizes="100vw"
+            sizes="(min-width: 1024px) 50vw, (min-width: 640px) 80vw, 100vw"
             priority
-            className="max-h-full max-w-full w-auto h-auto object-contain"
+            onLoad={() => setLoaded(true)}
+            className={`max-h-full max-w-full w-auto h-auto object-contain ${
+              loaded ? "opacity-100" : "opacity-0"
+            }`}
           />
         </div>
       )}
