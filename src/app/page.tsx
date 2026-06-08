@@ -35,7 +35,7 @@ export default function Home() {
 
         <div className="pt-8">
           I'm currently working on developer relations at{" "}
-          <a href="https://merge.dev" target="_blank" className="text-[#2C2A25] hover:text-opacity-70 underline">
+          <a href="https://merge.dev" target="_blank" className="text-[#D2D7CB] hover:text-opacity-70 underline">
             Merge
           </a>{" "}
           and studying computer science at{" "}
