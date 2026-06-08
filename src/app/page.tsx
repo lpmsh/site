@@ -34,7 +34,7 @@ export default function Home() {
         </div>*/}
 
         <div className="pt-8">
-          I just started a developer relations role at{" "}
+          I'm currently working on developer relations at{" "}
           <a href="https://merge.dev" target="_blank" className="text-[#4117F4] hover:text-opacity-70 underline">
             Merge
           </a>
