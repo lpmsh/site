@@ -11,15 +11,15 @@ export default function Home() {
 
         <div className="pt-8">
           I&apos;m a Christian, student, developer,{" "}
-          <a href="/photos" className="text-neutral-400 hover:text-neutral-500 underline">
+          <a href="/photos" className="text-neutral-300 hover:text-neutral-400 underline">
             photographer
           </a>
           , Pittsburgh and Ohio State sports fan, and can't live without music. You can usually find me{" "}
-          <a href="https://github.com/lpmsh" target="_blank" className="text-neutral-400 hover:text-neutral-500 underline">
+          <a href="https://github.com/lpmsh" target="_blank" className="text-neutral-300 hover:text-neutral-400 underline">
             coding
           </a>{" "}
           or hanging out with friends. I also occasionally{" "}
-          <a href="/blog" className="text-neutral-400 hover:text-neutral-500 underline">
+          <a href="/blog" className="text-neutral-300 hover:text-neutral-400 underline">
             write about things
           </a>
           .
@@ -58,15 +58,15 @@ export default function Home() {
 
         <div className="pt-8">
           You can reach me on{" "}
-          <a href="https://twitter.com/lmon_25" target="_blank" className="text-neutral-400 hover:text-neutral-500 underline">
+          <a href="https://twitter.com/lmon_25" target="_blank" className="text-neutral-300 hover:text-neutral-400 underline">
             X
           </a>{" "}
           or email: monaghal [at] purdue [dot] edu. You can also find me on{" "}
-          <a href="https://www.linkedin.com/in/liampmonaghan/" target="_blank" className="text-neutral-400 hover:text-neutral-500 underline">
+          <a href="https://www.linkedin.com/in/liampmonaghan/" target="_blank" className="text-neutral-300 hover:text-neutral-400 underline">
             LinkedIn
           </a>
           {" or "}
-          <a href="https://instagram.com/lpm_visuals" target="_blank" className="text-neutral-400 hover:text-neutral-500 underline">
+          <a href="https://instagram.com/lpm_visuals" target="_blank" className="text-neutral-300 hover:text-neutral-400 underline">
             Instagram
           </a>
           .
