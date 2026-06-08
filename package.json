@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "setup": "./conductor-setup.sh"
+    "setup": "./conductor-setup.sh",
+    "photos:sync": "node scripts/sync-photos.mjs"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.15",
@@ -22,9 +23,9 @@
     "@types/node": "20.2.5",
     "@types/react": "18.2.9",
     "@types/react-dom": "18.2.4",
-    "@types/react-responsive-masonry": "^2.1.0",
     "@types/react-syntax-highlighter": "^15.5.7",
     "@vercel/analytics": "^1.0.1",
+    "@vercel/blob": "^2.4.0",
     "autoprefixer": "10.4.14",
     "cheerio": "^1.1.2",
     "class-variance-authority": "^0.6.0",
@@ -41,8 +42,6 @@
     "react": "18.2.0",
     "react-animate-height": "^3.2.2",
     "react-dom": "18.2.0",
-    "react-lazy-load": "^4.0.1",
-    "react-responsive-masonry": "^2.1.7",
     "react-syntax-highlighter": "^15.5.0",
     "react-tooltip": "^5.13.2",
     "reading-time": "^1.5.0",
@@ -60,6 +59,7 @@
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.19",
     "@types/prismjs": "^1.26.0",
-    "@types/turndown": "^5.0.6"
+    "@types/turndown": "^5.0.6",
+    "sharp": "^0.34.5"
   }
 }
