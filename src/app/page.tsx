@@ -34,15 +34,15 @@ export default function Home() {
         </div>*/}
 
         <div className="pt-8">
-          I'm currently studying computer science at{" "}
-          <a href="https://purdue.edu" target="_blank" className="text-[#CFB991] hover:text-opacity-70 underline">
-            Purdue
+          I'm currently an engineer at{" "}
+          <a href="https://warp.co" target="_blank" className="text-[#FF3D00] hover:text-opacity-70 underline">
+            Warp
           </a>
           .
         </div>
         <div className="pt-2">
           I was previously a software engineer intern for{" "}
-          <a href="https://flowglad.com" target="_blank" className="text-[#DD7D2A] hover:text-opacity-70 underline">
+          <a href="https://flowglad.com" target="_blank" className="text-[#D4CDAE] hover:text-opacity-70 underline">
             Flowglad
           </a>{" "}
           and{" "}
@@ -56,10 +56,6 @@ export default function Home() {
           You can reach me on{" "}
           <a href="https://twitter.com/lmon_25" target="_blank" className="text-neutral-400 hover:text-neutral-500 underline">
             X
-          </a>{" "}
-          or{" "}
-          <a href="mailto:monaghal@purdue.edu" className="text-neutral-400 hover:text-neutral-500 underline">
-            email
           </a>
           . You can also find me on{" "}
           <a href="https://www.linkedin.com/in/liampmonaghan/" target="_blank" className="text-neutral-400 hover:text-neutral-500 underline">
