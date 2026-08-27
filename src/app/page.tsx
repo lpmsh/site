@@ -1,18 +1,12 @@
-import Image from "next/image";
-import logo from "@/app/logo.png";
-
 export default function Home() {
   return (
     <div className="w-full flex justify-center ">
       <div className="sm:max-w-[70%] lg:w-[50%] sm:absolute sm:px-0 px-6 top-0 left-[96px] flex flex-col items-start pt-10 sm:pt-24 lg:border-red-500 md:border-yellow-500 sm:border-green-500">
-        <div className="flex items-center gap-x-2">
-          <Image src={logo} alt="logo" className="w-4"/>
-          <div>
-            Liam Monaghan{" "}
-            <a className="mt-8" target="_blank" href="https://light.lpm.sh">
-              💡
-            </a>
-          </div>
+        <div>
+          Liam Monaghan{" "}
+          <a className="mt-8" target="_blank" href="https://light.lpm.sh">
+            💡
+          </a>
         </div>
 
         <div className="pt-8">

@@ -3,8 +3,6 @@
 import { IconArrowLeft } from "@tabler/icons-react";
 import { usePathname, useRouter } from "next/navigation";
 import { useNavigation } from "./NavigationProvider";
-import logo from "@/app/logo.png";
-import Image from "next/image";
 
 // The fallback destination when there is no in-app history to go back to:
 // the parent page one segment up (e.g. /blog/some-post -> /blog), or the root
@@ -32,7 +30,8 @@ export function BackButton() {
   return (
     <button onClick={handleBack} className="md:max-w-[50%] md:px-0 px-6 flex justify-start w-full py-4">
       <div className="flex gap-x-4 items-center">
-        <Image src={logo} alt="logo" className="w-6" />
+        <IconArrowLeft className="text-neutral-500" />
+        <div className="text-black">LPM</div>
       </div>
     </button>
   );
