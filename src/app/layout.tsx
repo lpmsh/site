@@ -28,7 +28,7 @@ const inter = Inter({
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html className={`bg-white`} lang="en">
-      <body className={clsx(inter.className, "text-neutral-800 text-sm")}>
+      <body className={clsx(inter.className, "text-[#585858] text-sm")}>
         <NavigationProvider>{children}</NavigationProvider>
         <Analytics />
       </body>

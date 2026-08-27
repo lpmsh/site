@@ -22,8 +22,7 @@ export default async function Blog() {
   return (
     <div className="flex w-full justify-center">
       <div className="flex flex-col items-center w-full">
-        <div className="text-lg font-semibold text-left w-full">Blog</div>
-        <div className=" py-6  flex flex-col gap-y-4 w-full ">
+        <div className="  flex flex-col gap-y-4 w-full ">
           {posts.data.length != 0 ? (
             <>
               {posts.data

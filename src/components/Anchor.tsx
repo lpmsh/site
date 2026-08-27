@@ -14,7 +14,7 @@ function A({
 }) {
   return (
     <a
-      className={cn("text-custom-400 hover:text-neutral-500", className)}
+      className={cn("text-neutral-700 hover:text-neutral-900 underline", className)}
       href={href}
       target={target}
     >

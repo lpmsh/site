@@ -1,25 +1,31 @@
+import Image from "next/image";
+import logo from "@/app/logo.png";
+
 export default function Home() {
   return (
     <div className="w-full flex justify-center ">
       <div className="sm:max-w-[70%] lg:w-[50%] sm:absolute sm:px-0 px-6 top-0 left-[96px] flex flex-col items-start pt-10 sm:pt-24 lg:border-red-500 md:border-yellow-500 sm:border-green-500">
-        <div>
-          Liam Monaghan{" "}
-          <a className="mt-8" target="_blank" href="https://light.lpm.sh">
-            💡
-          </a>
+        <div className="flex items-center gap-x-2">
+          <Image src={logo} alt="logo" className="w-4"/>
+          <div>
+            Liam Monaghan{" "}
+            <a className="mt-8" target="_blank" href="https://light.lpm.sh">
+              💡
+            </a>
+          </div>
         </div>
 
         <div className="pt-8">
-          I&apos;m a Christian, student, developer,{" "}
-          <a href="/photos" className="text-neutral-400 hover:text-neutral-500 underline">
+          I&apos;m a Christian, developer,{" "}
+          <a href="/photos" className="text-neutral-700 hover:text-neutral-900 underline">
             photographer
           </a>
           , Pittsburgh and Ohio State sports fan, and can't live without music. You can usually find me{" "}
-          <a href="https://github.com/lpmsh" target="_blank" className="text-neutral-400 hover:text-neutral-500 underline">
+          <a href="https://github.com/lpmsh" target="_blank" className="text-neutral-700 hover:text-neutral-900 underline">
             coding
           </a>{" "}
           or hanging out with friends. I also occasionally{" "}
-          <a href="/blog" className="text-neutral-400 hover:text-neutral-500 underline">
+          <a href="/blog" className="text-neutral-700 hover:text-neutral-900 underline">
             write about things
           </a>
           .
@@ -43,15 +49,15 @@ export default function Home() {
 
         <div className="pt-8">
           You can reach me on{" "}
-          <a href="https://twitter.com/lmon_25" target="_blank" className="text-neutral-400 hover:text-neutral-500 underline">
+          <a href="https://twitter.com/lmon_25" target="_blank" className="text-neutral-700 hover:text-neutral-900 underline">
             X
           </a>
           . You can also find me on{" "}
-          <a href="https://www.linkedin.com/in/liampmonaghan/" target="_blank" className="text-neutral-400 hover:text-neutral-500 underline">
+          <a href="https://www.linkedin.com/in/liampmonaghan/" target="_blank" className="text-neutral-700 hover:text-neutral-900 underline">
             LinkedIn
           </a>
           {" or "}
-          <a href="https://instagram.com/lpm_visuals" target="_blank" className="text-neutral-400 hover:text-neutral-500 underline">
+          <a href="https://instagram.com/lpm_visuals" target="_blank" className="text-neutral-700 hover:text-neutral-900 underline">
             Instagram
           </a>
           .
